@@ -5,6 +5,8 @@ require 'yaml'
 require 'nokogiri'
 require 'open-uri'
 require 'json'
+require 'uri'
+require 'time'
 
 def tweak_image(url)
   case url
@@ -21,6 +23,20 @@ def ucfirst(txt)
   txt.sub(/^(\w)/, &:capitalize)
 end
 
+def gcal_link(talk)
+  start  = Time.parse(talk["start_on"] + " +0900")
+  finish = start + talk["duration"].to_i * 60
+  
+  uri = URI("https://www.google.com/calendar/event")
+  uri.query = URI.encode_www_form(
+    action: "TEMPLATE",
+    text: (talk["title"] || talk["title_en"]) + " - " + talk["speaker"]["name"],
+    dates: start.utc.strftime('%Y%m%dT%H%M%SZ') + '/' + finish.utc.strftime('%Y%m%dT%H%M%SZ'),
+    sprop: "http://github.miyagawa.io/yapcasia2015/##{talk['id']}",
+  )
+  uri
+end
+
 def get_talk_details(talk)
   {
     "id" => talk["id"],
@@ -32,6 +48,7 @@ def get_talk_details(talk)
     "labels" => [ ucfirst(talk["category"]), ucfirst(talk["material_level"]) ],
     "duration" => talk["duration"],
     "language" => talk["language"] == "ja" ? "Japanese" : "English",
+    "gcal" => gcal_link(talk),
   }
 end
 

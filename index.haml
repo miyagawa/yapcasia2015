@@ -49,9 +49,14 @@
                         .description
                           .ui.header= talk["speaker"]
                           = talk["description"]
-                          .ui.label= talk["language"]
+                          .ui.tag.label= talk["language"]
                           - talk["labels"].each do |label|
-                            .ui.label= label
+                            .ui.tag.label= label
+                      .actions
+                        %a.ui.button.blue{href: talk["gcal"], target: "_blank"}
+                          %i.icon.calendar
+                          Google Calendar
+                        .ui.cancel.button Close
                     .ui.cards
                       .card{id: talk["id"]}
                         .content
