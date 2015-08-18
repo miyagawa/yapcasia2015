@@ -10,7 +10,7 @@
   <script>
     jQuery(function(){
       $('.talk-title').click(function(){
-        $("#modal-" + $(this).data('id')).modal("show");
+        $("#modal-" + $(this).data('id')).modal('setting', 'transition', 'fade').modal("show");
       });
       if (navigator.language.match(/^en/)) {
         $('.alternative').each(function() {
