@@ -13,8 +13,8 @@
       });
     });
   %body{style: "padding: 1em"}
-    - @schedule.each do |event|
-      %h2.ui.header.aligned.center.horizontal.divider
+    - @schedule.each_with_index do |event, i|
+      %h2.ui.header.aligned.center.horizontal.divider{id: "day-#{i}"}
         %i.icon.calendar
         = event["date"]
       .ui.grid
