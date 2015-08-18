@@ -1,0 +1,52 @@
+!!! 5
+%html
+  %body
+    %title YAPC::Asia 2015
+    %link{rel: "stylesheet", type: "text/css", class: "ui", href: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.css"}
+    %script{type: "text/javascript", src: "//code.jquery.com/jquery-1.11.3.min.js"}
+    %script{type: "text/javascript", src: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.js"}
+    :javascript
+      jQuery(function(){
+        $('.talk-title').click(function(){
+          $("#modal-" + $(this).data('id')).modal("show");
+        });
+      });
+  %body{style: "margin: 1em"}
+    - @schedule.each do |event|
+      %h2.ui.header.aligned.center{style: "margin: 2em 0"}
+        %i.icon.calendar
+        = event["date"]
+      .ui.grid
+        .row
+          .one.wide.column
+          - event["rooms"].each do |room|
+            .three.wide.column.center.aligned
+              %strong= room
+        - event["slots"].each do |slot|
+          .stretched.row
+            .one.wide.column
+              - slot["hour"].each do |hour|
+                .ui.vertical.segment= hour
+            - slot["talks"].each do |talks|
+              .three.wide.column
+                - talks.each do |talk|
+                  - if talk
+                    .ui.modal{id: "modal-#{talk['id']}"}
+                      .header= talk["title"]
+                      .image.content
+                        .ui.medium.image.circular
+                          %img{src: talk["avatar"]}
+                        .description
+                          = talk["description"]
+                          %p
+                            .ui.label= talk["language"]
+                            - talk["labels"].each do |label|
+                              .ui.label= label
+                    .ui.cards
+                      .card
+                        .content
+                          %a.talk-title.header{href: '#', data: {"id": talk["id"]} }= talk["title"]
+                          .meta= talk["language"] + ", " + talk["duration"]
+                          .description
+                            %img.ui.avatar.imager{src: talk["avatar"]}
+                            = talk["speaker"]

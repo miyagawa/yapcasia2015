@@ -1,0 +1,119 @@
+- date: 8/20
+  rooms:
+    - Track D (605-606)
+    - Track E (607-608)
+  slots:
+    - hour: "19:00"
+      talks:
+        - b355fa20-122e-11e5-8ba5-d9f87d574c3a
+        - 621948f2-0d46-11e5-a403-67dc7d574c3a
+    - hour: "19:40"
+      talks:
+        - 39a72c04-10e3-11e5-b8ab-d7f07d574c3a
+        - f5aa5054-12fd-11e5-b4c9-d9f87d574c3a
+    - hour: "20:20"
+      talks:
+        - 5f5cad74-004a-11e5-acf4-89c77d574c3a
+        - 7d62caf8-12f4-11e5-881c-d9f87d574c3a
+
+- date: 8/21
+  rooms:
+    - Track A Hall
+    - Track B (701-702)
+    - Track C (703)
+    - Track D (605-606)
+    - Track E (607-608)
+  slots:
+    - hour: "9:45"
+      talks:
+        - 1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a
+    - hour: "10:00"
+      talks:
+        - a636430c-0fbf-11e5-8a02-43ec7d574c3a
+    - hour: ["11:10","11:40"]
+      talks:
+        - e19fe827-13c1-11e5-aca1-525412004261
+        - [f283a924-fddc-11e4-90cd-bdc07d574c3a, e8eebd70-f906-11e4-8f91-8ab37d574c3a]
+        - 44721562-10e4-11e5-88a0-d7f07d574c3a
+        - 4bab2728-00fa-11e5-9931-79c97d574c3a
+        - 9ec2791c-05e5-11e5-81fa-79c97d574c3a
+    - hour: "13:10"
+      talks:
+        - cc0ec485-1879-11e5-aca1-525412004261
+        - 94051590-fb11-11e4-a39d-8ab37d574c3a
+        - a668ef3e-080b-11e5-b2b4-79c97d574c3a
+        - dead6890-09b7-11e5-998a-67dc7d574c3a
+        - b335dee0-09ad-11e5-8d7a-67dc7d574c3a
+    - hour: "14:20"
+      talks:
+        - a06d9970-0d7b-11e5-aaf9-67dc7d574c3a
+        - c61a32a4-f797-11e4-bcef-8ab37d574c3a
+        - 9f7059dc-003c-11e5-a00c-89c77d574c3a
+        - e14c5ae0-12f7-11e5-a909-d9f87d574c3a
+        - de9e7a1e-136d-11e5-a9fc-d9f87d574c3a
+    - hour: ["15:30","16:00"]
+      talks:
+        - [7d66b640-0a6b-11e5-b1a0-67dc7d574c3a, c191c08a-0a98-11e5-be34-67dc7d574c3a]
+        - [bb82c8fc-12a3-11e5-962e-d9f87d574c3a, b396e912-091a-11e5-8d2d-67dc7d574c3a]
+        - [1da55daa-0deb-11e5-944c-67dc7d574c3a, 53944d48-09ba-11e5-998a-67dc7d574c3a]
+        - 523b9508-0d77-11e5-8174-67dc7d574c3a
+        - cf39f7fc-ff44-11e4-9264-66c47d574c3a
+    - hour: "16:40"
+      talks:
+        - 22957e9c-1872-11e5-aca1-525412004261
+
+- date: 8/22
+  rooms:
+    - Track A Hall
+    - Track B (701-702)
+    - Track C (703)
+    - Track D (605-606)
+    - Track E (607-608)
+  slots:
+    - hour: "10:00"
+      talks:
+        - 21cb8176-065b-11e5-9492-79c97d574c3a
+        - 82e93a96-f60e-11e4-907e-8ab37d574c3a
+        - 5b1cd536-07ed-11e5-9e42-79c97d574c3a
+        - c5ea5428-fac9-11e4-88c1-8ab37d574c3a
+        - 86ebd212-fab3-11e4-8f5a-8ab37d574c3a
+    - hour: ["11:10","11:40"] 
+      talks:
+        - 3fe49c10-fa67-11e4-9e02-8ab37d574c3a
+        - [93eaf068-faec-11e4-a8fd-8ab37d574c3a,5ea2630a-133d-11e5-8cbb-d9f87d574c3a]
+        - c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a
+        - [f2816038-10ec-11e5-89bf-d7f07d574c3a, 0af26fe4-0b7b-11e5-a29c-67dc7d574c3a]
+        - 39a15ad4-0ff5-11e5-a984-d7f07d574c3a
+    - hour: "12:20"
+      talks:
+        -
+        - e46f9d1b-2ad1-11e5-aca1-525412004261
+        - e34fca9d-2ad1-11e5-aca1-525412004261
+    - hour: "13:10"
+      talks:
+        - bd04b86c-f9de-11e4-b996-8ab37d574c3a
+        - a4318242-f5f2-11e4-afb7-49b37d574c3a
+        - 268d730e-136c-11e5-ac8f-d9f87d574c3a
+        - dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a
+        - 4f85e87a-f9ec-11e4-8262-8ab37d574c3a
+    - hour: ["14:20","14:50"]
+      talks:
+        - 22f59fb8-0fad-11e5-98ef-43ec7d574c3a
+        - [5ceebdcc-136c-11e5-a014-d9f87d574c3a, 897abeb2-1007-11e5-a760-d7f07d574c3a]
+        - [e466d60a-11db-11e5-b07b-d7f07d574c3a, b03162be-0052-11e5-ba92-89c77d574c3a]
+        - ad57ca84-13e9-11e5-aca1-525412004261
+        - 32a684e8-fd21-11e4-94eb-bdc07d574c3a
+    - hour: ["15:30","16:00"]
+      talks:
+        - 6bde6c69-187a-11e5-aca1-525412004261
+        - [92a7bb60-1323-11e5-a252-d9f87d574c3a, 81342dae-1351-11e5-ab94-d9f87d574c3a]
+        - 0b669ad8-f616-11e4-90fb-8ab37d574c3a
+        - 9e9ae188-fb20-11e4-9a97-8ab37d574c3a
+        - 53aacc02-faca-11e4-8c2e-8ab37d574c3a
+    - hour: "16:40"
+      talks:
+        - 69caedbd-1872-11e5-aca1-525412004261
+    - hour: "17:50"
+      talks:
+        - 6964fd88-f5e8-11e4-b323-49b37d574c3a
+      
