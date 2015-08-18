@@ -11,6 +11,11 @@
       $('.talk-title').click(function(){
         $("#modal-" + $(this).data('id')).modal("show");
       });
+      if (navigator.language.match(/^en/)) {
+        $('.alternative').each(function() {
+          $(this).text($(this).data('alt'));
+        });
+      }
     });
   %body{style: "padding: 1em"}
     - schedule.each_with_index do |event, i|
@@ -33,7 +38,7 @@
                 - talks.each do |talk|
                   - if talk
                     .ui.modal{id: "modal-#{talk['id']}"}
-                      .header= talk["title"] 
+                      .header.alternative{data: {alt: talk["title_en"]}}= talk["title"]
                       .image.content
                         .ui.medium.image.circular
                           %img{src: talk["avatar"], alt: talk["speaker"]}
@@ -46,7 +51,7 @@
                     .ui.cards
                       .card
                         .content
-                          %a.talk-title{data: {"id": talk["id"]} }= talk["title"]
+                          %a.talk-title.alternative{data: {"id": talk["id"], "alt": talk["title_en"]} }= talk["title"]
                           .meta= talk["language"] + ", " + talk["duration"] + " min"
                           .description
                             %img.ui.avatar.imager{src: talk["avatar"]}

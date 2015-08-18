@@ -25,6 +25,7 @@ def get_talk_details(talk)
   {
     "id" => talk["id"],
     "title" => talk["title"] || talk["title_en"],
+    "title_en" => talk["title_en"],
     "avatar" => tweak_image(talk["speaker"]["profile_image_url"]),
     "speaker" => talk["speaker"]["name"],
     "description" => talk["abstract_html"],
