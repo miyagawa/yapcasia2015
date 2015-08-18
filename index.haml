@@ -13,7 +13,7 @@
       });
     });
   %body{style: "padding: 1em"}
-    - @schedule.each_with_index do |event, i|
+    - schedule.each_with_index do |event, i|
       %h2.ui.header.aligned.center.horizontal.divider{id: "day-#{i}"}
         %i.icon.calendar
         = event["date"]
@@ -33,7 +33,7 @@
                 - talks.each do |talk|
                   - if talk
                     .ui.modal{id: "modal-#{talk['id']}"}
-                      .header= talk["title"]
+                      .header= talk["title"] 
                       .image.content
                         .ui.medium.image.circular
                           %img{src: talk["avatar"], alt: talk["speaker"]}
@@ -47,7 +47,7 @@
                       .card
                         .content
                           %a.talk-title{data: {"id": talk["id"]} }= talk["title"]
-                          .meta= talk["language"] + ", " + talk["duration"]
+                          .meta= talk["language"] + ", " + talk["duration"] + " min"
                           .description
                             %img.ui.avatar.imager{src: talk["avatar"]}
                             = talk["speaker"]

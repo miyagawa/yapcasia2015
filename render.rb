@@ -4,7 +4,7 @@ require 'haml'
 require 'yaml'
 require 'nokogiri'
 require 'open-uri'
-require 'active_support/cache'
+require 'json'
 
 def tweak_image(url)
   case url
@@ -17,32 +17,41 @@ def tweak_image(url)
   end
 end
 
-def get_talk_details(id)
-  warn "---> Getting Talk details for #{id}"
-  doc = Nokogiri::HTML(open("http://yapcasia.org/2015/talk/show/#{id}").read)
-  {
-    "id" => id,
-    "title" => doc.at_css('title').text.sub(/ - YAPC::Asia Tokyo 2015/, ''),
-    "avatar" => tweak_image(doc.at_css('.large-1 img')["src"]),
-    "speaker" => doc.at_css('.large-1').children[3].text,
-    "description" => doc.at_css('.abstract').inner_html.sub(/<h1>.*?<\/h1>\n/, ''),
-    "labels" => [ doc.at_css('table').children[5].children[3].text, doc.at_css('table').children[15].children[3].text ],
-    "duration" => doc.at_css('table').children[13].children[3].text,
-    "language" => doc.at_css('table').children[7].children[3].text, 
-  }.tap { |data| warn data.inspect }
+def ucfirst(txt)
+  txt.sub(/^(\w)/, &:capitalize)
 end
 
-cache = ActiveSupport::Cache::FileStore.new('.cache', expires_in: 1.day)
+def get_talk_details(talk)
+  {
+    "id" => talk["id"],
+    "title" => talk["title"] || talk["title_en"],
+    "avatar" => tweak_image(talk["speaker"]["profile_image_url"]),
+    "speaker" => talk["speaker"]["name"],
+    "description" => talk["abstract_html"],
+    "labels" => [ ucfirst(talk["category"]), ucfirst(talk["material_level"]) ],
+    "duration" => talk["duration"],
+    "language" => talk["language"] == "ja" ? "Japanese" : "English",
+  }
+end
 
-@schedule = YAML.load(File.read("schedule.yml"))
+schedule = YAML.load(File.read("schedule.yml"))
 
-@schedule.each do |event|
+talk_data = {}
+%W[day0 day1 day2].each do |file|
+  JSON.parse(File.read("#{file}.json"))["talks_by_venue"].each do |venue_talks|
+    venue_talks.each do |talk|
+      talk_data[talk["id"]] = talk
+    end
+  end
+end
+
+schedule.each do |event|
   event["slots"].each do |slot|
     slot["hour"]  = [slot["hour"]].flatten
     slot["talks"] = slot["talks"].map { |talks|
       [talks].flatten.map {|talk_id|
         if talk_id
-          cache.fetch("talk:#{talk_id}") { get_talk_details(talk_id) }
+          get_talk_details(talk_data[talk_id])
         else
           nil
         end
