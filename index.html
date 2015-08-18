@@ -18,6 +18,9 @@
           $(this).text($(this).data('alt'));
         });
       }
+      if (location.hash) {
+        $("#modal-" + location.hash.substring(1)).modal('setting', 'transition', 'fade').modal("show");
+      }
     });
   </script>
   <body style='padding: 1em'>
