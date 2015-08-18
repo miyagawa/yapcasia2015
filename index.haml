@@ -12,7 +12,10 @@
   :javascript
     jQuery(function(){
       $('.talk-title').click(function(){
-        $("#modal-" + $(this).data('id')).modal('setting', 'transition', 'fade').modal("show");
+        $("#modal-" + $(this).data('id')).modal({
+          transition: 'fade',
+          onHidden: function(){ history.replaceState({}, "", '#') }
+        }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
       });
       if (navigator.language.match(/^en/)) {
@@ -21,7 +24,7 @@
         });
       }
       if (location.hash) {
-        $("#modal-" + location.hash.substring(1)).modal('setting', 'transition', 'fade').modal("show");
+        $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade' }).modal("show");
       }
     });
   %body{style: "padding: 1em"}

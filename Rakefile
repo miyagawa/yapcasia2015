@@ -1,5 +1,5 @@
 desc "build static files"
-task :build => [:json] do
+task :build do
   system "ruby render.rb > index.html"
 end
 
