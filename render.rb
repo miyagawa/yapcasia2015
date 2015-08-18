@@ -12,7 +12,7 @@ def get_talk_details(id)
   {
     "id" => id,
     "title" => doc.at_css('title').text.sub(/ - YAPC::Asia Tokyo 2015/, ''),
-    "avatar" => doc.at_css('.large-1 img')["src"],
+    "avatar" => doc.at_css('.large-1 img')["src"].sub(/_normal\./, '.'),
     "speaker" => doc.at_css('.large-1').children[3].text,
     "description" => doc.at_css('.abstract').inner_html.sub(/<h1>.*?<\/h1>\n/, ''),
     "labels" => [ doc.at_css('table').children[5].children[3].text, doc.at_css('table').children[15].children[3].text ],
