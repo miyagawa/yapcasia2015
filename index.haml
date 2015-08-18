@@ -45,7 +45,7 @@
                     .ui.cards
                       .card
                         .content
-                          %a.talk-title.header{href: '#', data: {"id": talk["id"]} }= talk["title"]
+                          %a.talk-title.header{data: {"id": talk["id"]} }= talk["title"]
                           .meta= talk["language"] + ", " + talk["duration"]
                           .description
                             %img.ui.avatar.imager{src: talk["avatar"]}
