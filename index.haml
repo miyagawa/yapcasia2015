@@ -1,19 +1,20 @@
 !!! 5
 %html
-  %body
-    %title YAPC::Asia 2015
-    %link{rel: "stylesheet", type: "text/css", class: "ui", href: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.css"}
-    %script{type: "text/javascript", src: "//code.jquery.com/jquery-1.11.3.min.js"}
-    %script{type: "text/javascript", src: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.js"}
-    :javascript
-      jQuery(function(){
-        $('.talk-title').click(function(){
-          $("#modal-" + $(this).data('id')).modal("show");
-        });
+  %title YAPC::Asia 2015
+  %link{rel: "stylesheet", type: "text/css", class: "ui", href: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.css"}
+  %script{type: "text/javascript", src: "//code.jquery.com/jquery-1.11.3.min.js"}
+  %script{type: "text/javascript", src: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.js"}
+  :css
+    .talk-title { color: #000; font-weight: bold; }
+  :javascript
+    jQuery(function(){
+      $('.talk-title').click(function(){
+        $("#modal-" + $(this).data('id')).modal("show");
       });
-  %body{style: "margin: 1em"}
+    });
+  %body{style: "padding: 1em"}
     - @schedule.each do |event|
-      %h2.ui.header.aligned.center{style: "margin: 2em 0"}
+      %h2.ui.header.aligned.center.horizontal.divider
         %i.icon.calendar
         = event["date"]
       .ui.grid
@@ -45,7 +46,7 @@
                     .ui.cards
                       .card
                         .content
-                          %a.talk-title.header{data: {"id": talk["id"]} }= talk["title"]
+                          %a.talk-title{data: {"id": talk["id"]} }= talk["title"]
                           .meta= talk["language"] + ", " + talk["duration"]
                           .description
                             %img.ui.avatar.imager{src: talk["avatar"]}
