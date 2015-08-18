@@ -32,7 +32,7 @@ def gcal_link(talk)
     action: "TEMPLATE",
     text: (talk["title"] || talk["title_en"]) + " - " + talk["speaker"]["name"],
     dates: start.utc.strftime('%Y%m%dT%H%M%SZ') + '/' + finish.utc.strftime('%Y%m%dT%H%M%SZ'),
-    sprop: "http://github.miyagawa.io/yapcasia2015/##{talk['id']}",
+    location: talk["venue"],
   )
   uri
 end
@@ -56,9 +56,10 @@ schedule = YAML.load(File.read("schedule.yml"))
 
 talk_data = {}
 %W[day0 day1 day2].each do |file|
-  JSON.parse(File.read("#{file}.json"))["talks_by_venue"].each do |venue_talks|
+  data = JSON.parse(File.read("#{file}.json"))
+  data["talks_by_venue"].each do |venue_talks|
     venue_talks.each do |talk|
-      talk_data[talk["id"]] = talk
+      talk_data[talk["id"]] = talk.merge("venue" => data["venue_id2name"][talk["venue_id"]])
     end
   end
 end
