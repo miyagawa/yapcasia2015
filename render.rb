@@ -9,7 +9,7 @@ require 'json'
 def tweak_image(url)
   case url
   when /twimg\.com/
-    url.sub(/_normal\./, '.')
+    url.sub(/_normal\./, '_bigger.')
   when /graph\.facebook\.com/
     url + '?type=square&width=240'
   else
