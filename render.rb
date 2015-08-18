@@ -6,13 +6,24 @@ require 'nokogiri'
 require 'open-uri'
 require 'active_support/cache'
 
+def tweak_image(url)
+  case url
+  when /twimg\.com/
+    url.sub(/_normal\./, '.')
+  when /graph\.facebook\.com/
+    url + '?type=square&width=240'
+  else
+    url
+  end
+end
+
 def get_talk_details(id)
   warn "---> Getting Talk details for #{id}"
   doc = Nokogiri::HTML(open("http://yapcasia.org/2015/talk/show/#{id}").read)
   {
     "id" => id,
     "title" => doc.at_css('title').text.sub(/ - YAPC::Asia Tokyo 2015/, ''),
-    "avatar" => doc.at_css('.large-1 img')["src"].sub(/_normal\./, '.'),
+    "avatar" => tweak_image(doc.at_css('.large-1 img')["src"]),
     "speaker" => doc.at_css('.large-1').children[3].text,
     "description" => doc.at_css('.abstract').inner_html.sub(/<h1>.*?<\/h1>\n/, ''),
     "labels" => [ doc.at_css('table').children[5].children[3].text, doc.at_css('table').children[15].children[3].text ],
