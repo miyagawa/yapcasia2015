@@ -10,6 +10,7 @@
     jQuery(function(){
       $('.talk-title').click(function(){
         $("#modal-" + $(this).data('id')).modal('setting', 'transition', 'fade').modal("show");
+        history.replaceState({}, "", '#' + $(this).data('id'));
       });
       if (navigator.language.match(/^en/)) {
         $('.alternative').each(function() {
@@ -49,7 +50,7 @@
                           - talk["labels"].each do |label|
                             .ui.label= label
                     .ui.cards
-                      .card
+                      .card{id: talk["id"]}
                         .content
                           %a.talk-title.alternative{data: {"id": talk["id"], "alt": talk["title_en"]} }= talk["title"]
                           .meta= talk["language"] + ", " + talk["duration"] + " min"

@@ -11,6 +11,7 @@
     jQuery(function(){
       $('.talk-title').click(function(){
         $("#modal-" + $(this).data('id')).modal('setting', 'transition', 'fade').modal("show");
+        history.replaceState({}, "", '#' + $(this).data('id'));
       });
       if (navigator.language.match(/^en/)) {
         $('.alternative').each(function() {
@@ -61,7 +62,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='The story of language development' data-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>言語開発の現場</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -130,7 +131,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='621948f2-0d46-11e5-a403-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='The PHP Empire Strikes Back!!!' data-id='621948f2-0d46-11e5-a403-67dc7d574c3a'>PHP帝国の逆襲！（を願うPHPerが話す最近のPHPについてのクイックツアー PHP7対応版）</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -183,7 +184,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>perlワンライナー入門</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -227,7 +228,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>はてなブックマークのトピックページの裏側</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -276,7 +277,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='How to create/improve OSS products and its community' data-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>我々にできるOSSとそのコミュニティの育てかた</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -341,7 +342,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='The Art of Blogging Technologies' data-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>技術ブログを書くことについて語るときに僕の語ること</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -399,7 +400,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Opening' data-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>Opening</a>
                 <div class='meta'>Japanese, 15 min</div>
@@ -435,7 +436,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Merry Christmas!' data-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>メリークリスマス！</a>
                 <div class='meta'>English, 60 min</div>
@@ -470,7 +471,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e19fe827-13c1-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Managing Containers at Scale with CoreOS and Kubernetes' data-id='e19fe827-13c1-11e5-aca1-525412004261'>Managing Containers at Scale with CoreOS and Kubernetes</a>
                 <div class='meta'>English, 60 min</div>
@@ -516,7 +517,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt="Let's talk about recurrent neural network and self-organizing before deep learning!" data-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>DeepLearning の前に知っておくことがある！ 再帰型のニューラルネットワークや自己組織化マップについて語ろう</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -577,7 +578,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>それは僕たちのドメイン・DNS運用</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -647,7 +648,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='44721562-10e4-11e5-88a0-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Effective ES6' data-id='44721562-10e4-11e5-88a0-d7f07d574c3a'>Effective ES6</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -698,7 +699,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='4bab2728-00fa-11e5-9931-79c97d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='All of embed engineer from Web - Web, iOS, BLE and Hardware device -' data-id='4bab2728-00fa-11e5-9931-79c97d574c3a'>Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -769,7 +770,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>世界展開する大規模ウェブサービスのデプロイを支える技術</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -803,7 +804,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='cc0ec485-1879-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='cc0ec485-1879-11e5-aca1-525412004261'>TBD</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -870,7 +871,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='94051590-fb11-11e4-a39d-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt="What's happening in frontend now?" data-id='94051590-fb11-11e4-a39d-8ab37d574c3a'>今フロントエンドで何が起こっているのか</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -945,7 +946,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Make Drone written in Perl' data-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>どうしてもPerlでドローンを飛ばしたい人のためのハードウェアハック概論</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -978,7 +979,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='dead6890-09b7-11e5-998a-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Web Application Platform for the HTTP/2 and Cloud Era' data-id='dead6890-09b7-11e5-998a-67dc7d574c3a'>HTTP/2 & クラウド時代のウェブアプリケーション実行基盤</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1053,7 +1054,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>Consulと自作OSSを活用した100台規模のWebサービス運用</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1089,7 +1090,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt="Conway's Law of Distributed Work" data-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>Conway's Law of Distributed Work</a>
                 <div class='meta'>English, 60 min</div>
@@ -1160,7 +1161,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>WebAudio で入門する信号処理</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1222,7 +1223,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>Perlで学ぼう！文系プログラマのための、知識ゼロからのデータ構造と計算量</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1274,7 +1275,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>【sponsored contents】若手エンジニア達の生存戦略</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1383,7 +1384,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Three years on Perl ~ The technology to developing cool web service ~' data-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1438,7 +1439,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Electron: Building desktop apps with web technologies' data-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>Electron: Building desktop apps with web technologies</a>
                 <div class='meta'>English, 30 min</div>
@@ -1504,7 +1505,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='c191c08a-0a98-11e5-be34-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'> esa.io - 趣味から育てたWebサービスで生きていく</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -1553,7 +1554,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Yet Another Perl Cooking' data-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>Yet Another Perl Cooking</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -1612,7 +1613,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='How to develop microservices with Perl' data-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>大規模でも小中規模サービスでも捗る microservices な Web サービスのつくりかた</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -1673,7 +1674,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>PietでLISP処理系を書くのは難しい</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -1708,7 +1709,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='53944d48-09ba-11e5-998a-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Perl6 on JVM: It works??' data-id='53944d48-09ba-11e5-998a-67dc7d574c3a'>Perl6 on JVM: It works??</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -1813,7 +1814,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='523b9508-0d77-11e5-8174-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Technology for reduce a mistake.' data-id='523b9508-0d77-11e5-8174-67dc7d574c3a'>うっかりをなくす技術</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1897,7 +1898,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Podcasting,  Media for Web Engineer, and CPAN' data-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1931,7 +1932,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='22957e9c-1872-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Lightning Talks Day 1' data-id='22957e9c-1872-11e5-aca1-525412004261'>Lightning Talks Day 1</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -1993,7 +1994,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='21cb8176-065b-11e5-9492-79c97d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt="Docker For Polyglots : Where We've Come From, and Where We Can Go" data-id='21cb8176-065b-11e5-9492-79c97d574c3a'>PolyglotのためのDocker - 我々はどこから来てどこへ向かうのか</a>
                 <div class='meta'>English, 60 min</div>
@@ -2097,7 +2098,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Node/io.js past, present, future.' data-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>どうしてこうなった？ Node.jsとio.jsの分裂と統合の行方。これからどう進化していくのか？</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2166,7 +2167,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>Mackerel開発におけるScalaとGo、そしてPerl</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2195,7 +2196,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Deep Dive into the "Out of place Artifacts" of Google Cloud Platform' data-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>Google Cloud Platformの謎テクノロジーを掘り下げる</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2246,7 +2247,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>ISUCONの勝ち方</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2281,7 +2282,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Perl 5.22 and You' data-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>Perl 5.22 and You</a>
                 <div class='meta'>English, 60 min</div>
@@ -2332,7 +2333,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='We organized world&#x0027;s largest hackathon "SpaceApps"' data-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>NASA主催の世界最大級ハッカソンSpaceAppsを運営した話</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2385,7 +2386,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>Docker３兄弟について</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2443,7 +2444,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='iOS application development introduction for Perl server-side engineer' data-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>サーバーサイドエンジニア(特にPerl)のためのiOSアプリ開発入門</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2538,7 +2539,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Not enough availability' data-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>我々はどのように冗長化を失敗したのか</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2603,7 +2604,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>MySQLで2億件のシリアルデータと格闘したチューニングの話</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2669,7 +2670,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Discover the Microsoft Azure!' data-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>実はホットでオープンな Microsoft Azure</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2729,7 +2730,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e46f9d1b-2ad1-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='e46f9d1b-2ad1-11e5-aca1-525412004261'>ランチセッションA</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2777,7 +2778,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e34fca9d-2ad1-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='e34fca9d-2ad1-11e5-aca1-525412004261'>ランチセッションB</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -2811,7 +2812,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Adventures in Refactoring' data-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>Adventures in Refactoring</a>
                 <div class='meta'>English, 60 min</div>
@@ -2856,7 +2857,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Practical nginx module development〜C and Lua〜' data-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>実践nginxモジュール開発〜CとLua〜</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2896,7 +2897,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Build your own container from scratch with Perl' data-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>Perlでゼロから作るコンテナ</a>
                 <div class='meta'>English, 60 min</div>
@@ -2946,7 +2947,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Technologies for Data Analytics Platform' data-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>データ分析基盤を支える技術</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -2990,7 +2991,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Advanced technic for OS upgrading in 3 minutes' data-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>3分でサービスのOSを入れ替える技術</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3027,7 +3028,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Parallelism, Concurrency, and Asynchrony in Perl 6' data-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>Parallelism, Concurrency, and Asynchrony in Perl 6</a>
                 <div class='meta'>English, 60 min</div>
@@ -3086,7 +3087,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt=' Information technology to support the Santa Claus' data-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'> サンタクロースを支えるIT技術</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -3154,7 +3155,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='897abeb2-1007-11e5-a760-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='897abeb2-1007-11e5-a760-d7f07d574c3a'>Perlがメインじゃない現場でもPerlを使う(AdTech現場編）</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -3205,7 +3206,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Posture for Engineers' data-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>Posture for Engineers</a>
                 <div class='meta'>English, 30 min</div>
@@ -3250,7 +3251,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='b03162be-0052-11e5-ba92-89c77d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Run containerized workloads with Lattice' data-id='b03162be-0052-11e5-ba92-89c77d574c3a'>Run containerized workloads with Lattice</a>
                 <div class='meta'>English, 30 min</div>
@@ -3320,7 +3321,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='ad57ca84-13e9-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='ad57ca84-13e9-11e5-aca1-525412004261'>【特別企画】YAPCあるある（仮）</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3390,7 +3391,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>ソーシャルゲームにおける AWS 移行事例</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3425,7 +3426,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='6bde6c69-187a-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Profiling &amp; Optimizing in Go' data-id='6bde6c69-187a-11e5-aca1-525412004261'>Profiling & Optimizing in Go</a>
                 <div class='meta'>English, 60 min</div>
@@ -3475,7 +3476,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Fight the RTB market using Perl' data-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>Perl で RTB の最前線を闘い抜く</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -3532,7 +3533,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='81342dae-1351-11e5-ab94-d9f87d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='How to make the ConferenceNetwork' data-id='81342dae-1351-11e5-ab94-d9f87d574c3a'>カンファレンスネットワークの作り方</a>
                 <div class='meta'>Japanese, 30 min</div>
@@ -3581,7 +3582,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='About Windows for OSS Enginner' data-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>オープンソースエンジニアのための Windows入門</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3641,7 +3642,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='web over http2' data-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>HTTP2 時代の Web</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3727,7 +3728,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Simple steps and tips to improve IT infrastructure operations' data-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>辛いことをやめる！から始まる業務改善とInfrastructure as Code</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3761,7 +3762,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='69caedbd-1872-11e5-aca1-525412004261'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Lightning Talks Day 2' data-id='69caedbd-1872-11e5-aca1-525412004261'>Lightning Talks Day 2</a>
                 <div class='meta'>Japanese, 60 min</div>
@@ -3795,7 +3796,7 @@
             </div>
           </div>
           <div class='ui cards'>
-            <div class='card'>
+            <div class='card' id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>
               <div class='content'>
                 <a class='talk-title alternative' data-alt='Closing 🎉' data-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>クロージング 🎉</a>
                 <div class='meta'>Japanese, 30 min</div>
