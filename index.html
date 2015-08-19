@@ -27,7 +27,6 @@
       $('.rating').each(function(){
         var value = localStorage.getItem("star-" + $(this).data('talk-id'));
         if (typeof(value) != 'undefined') {
-          console.log($(this).data('talk-id') + " <= " + value);
           $(this).attr('data-rating', value);
         }
       });
@@ -35,7 +34,6 @@
       $('.rating').rating({
         onRate: function(value){
           if (typeof(value) != 'undefined') {
-          console.log($(this).data('talk-id') + " => " + value);
             localStorage.setItem("star-" + $(this).data('talk-id'), value);
           }
         }
