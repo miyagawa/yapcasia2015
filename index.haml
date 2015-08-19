@@ -14,7 +14,7 @@
       $('.talk-title').click(function(){
         $("#modal-" + $(this).data('id')).modal({
           transition: 'fade',
-          onHidden: function(){ history.replaceState({}, "", '#') }
+          onHide: function(){ history.replaceState({}, "", '#') }
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
       });
