@@ -16,18 +16,19 @@
     jQuery(function(){
       $('.talk-title').click(function(){
         $("#modal-" + $(this).data('id')).modal({
+          duration: 100,
           transition: 'fade',
           onHide: function(){ history.replaceState({}, "", '#') }
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
       });
       if (navigator.language.match(/^en/)) {
-        $('.alternative').each(function() {
-          $(this).text($(this).data('alt'));
+        $('.translatable').each(function() {
+          $(this).text($(this).data('en'));
         });
       }
       if (location.hash) {
-        $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade' }).modal("show");
+        $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade', duration: 200 }).modal("show");
       }
     });
   %body{style: "padding: 1em"}
@@ -52,7 +53,7 @@
                 - talks.each do |talk|
                   - if talk
                     .ui.modal{id: "modal-#{talk['id']}"}
-                      .header.alternative{data: {alt: talk["title_en"]}}= talk["title"]
+                      .header.translatable{data: {en: talk["title_en"]}}= talk["title"]
                       .image.content
                         .ui.medium.image.circular
                           %img{src: talk["avatar"], alt: talk["speaker"]}
@@ -70,7 +71,7 @@
                     .ui.vertical.segment.talk{id: talk["id"]}
                       .item
                         .content
-                          %a.talk-title.alternative.header{data: {"id": talk["id"], "alt": talk["title_en"]} }= talk["title"]
+                          %a.talk-title.translatable.header{data: {"id": talk["id"], "en": talk["title_en"]} }= talk["title"]
                           .talk-meta= talk["language"] + ", " + talk["duration"] + " min"
                           .description.speaker
                             %img.ui.avatar.image{src: talk["avatar"]}
