@@ -72,7 +72,7 @@
                     .ui.modal{id: "modal-#{talk['id']}"}
                       .header.translatable{data: {en: talk["title_en"]}}= talk["title"]
                       .image.content
-                        .ui.medium.image.circular
+                        .ui.small.image.circular
                           %img{src: talk["avatar"], alt: talk["speaker"]}
                         .description
                           .ui.header= talk["speaker"]
