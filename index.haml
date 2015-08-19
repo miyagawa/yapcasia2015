@@ -22,11 +22,28 @@
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
       });
+
+      $('.rating').each(function(){
+        var value = localStorage.getItem("star-" + $(this).data('talk-id'));
+        if (typeof(value) != 'undefined') {
+          $(this).attr('data-rating', value);
+        }
+      });
+
+      $('.rating').rating({
+        onRate: function(value){
+          if (typeof(value) != 'undefined') {
+            localStorage.setItem("star-" + $(this).data('talk-id'), value);
+          }
+        }
+      });
+
       if (navigator.language.match(/^en/)) {
         $('.translatable').each(function() {
           $(this).text($(this).data('en'));
         });
       }
+
       if (location.hash) {
         $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade', duration: 200 }).modal("show");
       }
@@ -72,7 +89,9 @@
                       .item
                         .content
                           %a.talk-title.translatable.header{data: {"id": talk["id"], "en": talk["title_en"]} }= talk["title"]
-                          .talk-meta= talk["language"] + ", " + talk["duration"] + " min"
+                          .talk-meta
+                            = talk["language"] + ", " + talk["duration"] + " min"
+                            .ui.star.rating{data:{"max-rating": 1, "talk-id": talk['id']}}
                           .description.speaker
                             %img.ui.avatar.image{src: talk["avatar"]}
                             = talk["speaker"]

@@ -23,11 +23,30 @@
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
       });
+    
+      $('.rating').each(function(){
+        var value = localStorage.getItem("star-" + $(this).data('talk-id'));
+        if (typeof(value) != 'undefined') {
+          console.log($(this).data('talk-id') + " <= " + value);
+          $(this).attr('data-rating', value);
+        }
+      });
+    
+      $('.rating').rating({
+        onRate: function(value){
+          if (typeof(value) != 'undefined') {
+          console.log($(this).data('talk-id') + " => " + value);
+            localStorage.setItem("star-" + $(this).data('talk-id'), value);
+          }
+        }
+      });
+    
       if (navigator.language.match(/^en/)) {
         $('.translatable').each(function() {
           $(this).text($(this).data('en'));
         });
       }
+    
       if (location.hash) {
         $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade', duration: 200 }).modal("show");
       }
@@ -85,7 +104,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='The story of language development' data-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>言語開発の現場</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12301?v=3'>
                   SHIBATA Hiroshi
@@ -161,7 +183,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='The PHP Empire Strikes Back!!!' data-id='621948f2-0d46-11e5-a403-67dc7d574c3a'>PHP帝国の逆襲！（を願うPHPerが話す最近のPHPについてのクイックツアー PHP7対応版）</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='621948f2-0d46-11e5-a403-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000122330373/c9162e04e2a5fb779758cc4f0a13c2c0_bigger.jpeg'>
                   鶉
@@ -184,7 +209,7 @@
               </div>
               <div class='description'>
                 <div class='ui header'>Akira Sakamoto</div>
-                <h2>perlワンライナー便利です</h2>
+                <h2>Perlワンライナー便利です</h2>
                 
                 <p>たくさんの技術があるなかで、適切な場面で適切な技術を選択するのは大切です。
                 自分が働いているフリークアウトはアドテクと呼ばれる業態です。perlで業務を行っています。
@@ -221,7 +246,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>perlワンライナー入門</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/929494707114841/picture?type=square&amp;width=240'>
                   Akira Sakamoto
@@ -272,7 +300,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>はてなブックマークのトピックページの裏側</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1711030185/header_title_bigger.jpg'>
                   skozawa
@@ -328,7 +359,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='How to create/improve OSS products and its community' data-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>我々にできるOSSとそのコミュニティの育てかた</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/525991223060746241/_ORoKYuX_bigger.png'>
                   tagomoris
@@ -400,7 +434,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='The Art of Blogging Technologies' data-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>技術ブログを書くことについて語るときに僕の語ること</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/3279630066/5fec6321a3aca8de271ccb3fae606d2a_bigger.png'>
                   yuuki
@@ -465,7 +502,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Opening' data-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>Opening</a>
-                <div class='talk-meta'>Japanese, 15 min</div>
+                <div class='talk-meta'>
+                  Japanese, 15 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
@@ -508,7 +548,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Merry Christmas!' data-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>メリークリスマス！</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/162146?v=3'>
                   Larry Wall
@@ -550,7 +593,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Managing Containers at Scale with CoreOS and Kubernetes' data-id='e19fe827-13c1-11e5-aca1-525412004261'>Managing Containers at Scale with CoreOS and Kubernetes</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e19fe827-13c1-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1123322?v=3'>
                   Kelsey Hightower
@@ -603,7 +649,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en="Let's talk about recurrent neural network and self-organizing before deep learning!" data-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>DeepLearning の前に知っておくことがある！ 再帰型のニューラルネットワークや自己組織化マップについて語ろう</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/10035?v=3'>
                   muddydixon
@@ -671,7 +720,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>それは僕たちのドメイン・DNS運用</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599475415766302720/IrXs2kkC_bigger.png'>
                   jigyakkuma
@@ -748,7 +800,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Effective ES6' data-id='44721562-10e4-11e5-88a0-d7f07d574c3a'>Effective ES6</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='44721562-10e4-11e5-88a0-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/26476?v=3'>
                   Teppei Sato
@@ -806,7 +861,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='All of embed engineer from Web - Web, iOS, BLE and Hardware device -' data-id='4bab2728-00fa-11e5-9931-79c97d574c3a'>Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='4bab2728-00fa-11e5-9931-79c97d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/849165?v=3'>
                   Kazuhiro Homma
@@ -884,7 +942,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>世界展開する大規模ウェブサービスのデプロイを支える技術</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/87649?v=3'>
                   aereal
@@ -925,7 +986,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='cc0ec485-1879-11e5-aca1-525412004261'>TBD</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='cc0ec485-1879-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/30733?v=3'>
                   Yukihiro "Matz" Matsumoto
@@ -999,7 +1063,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en="What's happening in frontend now?" data-id='94051590-fb11-11e4-a39d-8ab37d574c3a'>今フロントエンドで何が起こっているのか</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='94051590-fb11-11e4-a39d-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/250407?v=3'>
                   Toru Kobayashi
@@ -1081,7 +1148,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Make Drone written in Perl' data-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>どうしてもPerlでドローンを飛ばしたい人のためのハードウェアハック概論</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/419456734264954880/FYDksW9H_bigger.jpeg'>
                   macopy nnid:mackee_w
@@ -1121,7 +1191,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Web Application Platform for the HTTP/2 and Cloud Era' data-id='dead6890-09b7-11e5-998a-67dc7d574c3a'>HTTP/2 & クラウド時代のウェブアプリケーション実行基盤</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='dead6890-09b7-11e5-998a-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1656455610/__________2011-11-25_12.16.30__bigger.png'>
                   Kazuho Oku
@@ -1203,7 +1276,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>Consulと自作OSSを活用した100台規模のWebサービス運用</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1295745651/fujiwara-icon-s_bigger.png'>
                   fujiwara
@@ -1246,7 +1322,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en="Conway's Law of Distributed Work" data-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>Conway's Law of Distributed Work</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/54422?v=3'>
                   Casey West
@@ -1324,7 +1403,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>WebAudio で入門する信号処理</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/3092?v=3'>
                   cho45
@@ -1393,7 +1475,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>Perlで学ぼう！文系プログラマのための、知識ゼロからのデータ構造と計算量</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/876988?v=3'>
                   Shinpei Maruyama
@@ -1452,7 +1537,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>【sponsored contents】若手エンジニア達の生存戦略</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599568269507342336/jb_Rk7sX_bigger.jpg'>
                   ｼﾞﾝｼﾞﾆｱ
@@ -1568,7 +1656,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Three years on Perl ~ The technology to developing cool web service ~' data-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1753788808/sushi_r_bigger.gif'>
                   趣味はマリンスポーツです
@@ -1630,7 +1721,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Electron: Building desktop apps with web technologies' data-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>Electron: Building desktop apps with web technologies</a>
-                <div class='talk-meta'>English, 30 min</div>
+                <div class='talk-meta'>
+                  English, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/69169?v=3'>
                   Ben Ogle
@@ -1653,38 +1747,66 @@
                 <h2>発表内容(予定)</h2>
                 
                 <ul>
-                <li>開発の様子
+                <li>私は誰?</li>
+                <li>esa LLC とは</li>
+                <li>esa.io について</li>
+                <li>この発表はこんな人におすすめ
                 <ul>
-                <li>基本的にエンジニア x 1, デザイナー x1</li>
-                <li>1日平均 5回デプロイ</li>
-                <li>staging環境はまだ無い</li>
-                <li>heroku</li>
+                <li>趣味のようにプロダクトを作って生活していきたい人</li>
+                <li>esa.io の中のひとの考え方に興味があるひと</li>
+                <li>トリが好きな人 (\( ⁰⊖⁰)/)</li>
                 </ul></li>
-                <li>ユーザサポートの様子
+                <li>Before esa
                 <ul>
-                <li>ユーザーフィードバック駆動開発</li>
-                <li>公式twitterアカウント</li>
-                </ul></li>
-                <li>esaの様子
+                <li>お仕事でいろいろ</li>
+                <li>趣味でいろいろ</li>
+                <li>いろいろやってたらいろんな人々に出会った
                 <ul>
-                <li>オフの時間に趣味で作り始めたWebサービスが会社になるまで
+                <li>ポエム界隈 #とは</li>
+                </ul></li>
+                <li>いろいろ試すの、大事</li>
+                </ul></li>
+                <li>Beginning of esa
                 <ul>
-                <li>作り続ける
+                <li>某サービスの試用期限が切れた</li>
+                <li>毎日がハッカソン状態</li>
+                <li>毎日ドックフーディング</li>
+                <li>知人の会社が使ってくれることに</li>
+                <li>会社にした</li>
+                <li>オープンβでの反省</li>
+                <li>esaじゃないほうの会社をやめた</li>
+                </ul></li>
+                <li>How to develop esa
                 <ul>
-                <li>ChromeExtension芸</li>
-                <li>pplogチームとの邂逅</li>
-                </ul></li>
-                <li>軸足を移すタイミング</li>
-                </ul></li>
-                <li>モチベーション
+                <li>楽しく開発したい！！
                 <ul>
-                <li>リリースノート</li>
-                <li>ドックフーディング</li>
+                <li>...しかし楽しさ自体はコントロールできない</li>
                 </ul></li>
-                <li>esaのここが便利</li>
-                <li>esaのこれからの話</li>
+                <li>やれることを、やる</li>
+                <li>毎日 Auto Bundle Update</li>
+                <li>小さく作る・素早く試す</li>
+                <li>Bug Fix タイムアタック</li>
+                <li>フィードバック駆動開発</li>
+                <li>心からのドックフーディング</li>
+                <li>よく寝る( ˘ω˘)</li>
+                <li>We're Not Hiring</li>
+                <li>Herokuを使う</li>
+                <li>リリースノート駆動開発</li>
+                <li>開発スケジュールを決めない</li>
+                <li>かわいみ
+                <ul>
+                <li>Tシャツ</li>
+                <li>ステッカー</li>
+                <li>twitter.com/esa_io</li>
                 </ul></li>
-                <li>他にも「◯◯の話が聞きたい！」ということがあれば <a href="https://twitter.com/esa_io">@esa_io | Twitter</a> までメンションください!</li>
+                </ul></li>
+                <li>ﾌﾘｶｴﾘ
+                <ul>
+                <li>5年前の日記</li>
+                <li>Re: 5年前の日記</li>
+                <li>試行錯誤しよう</li>
+                </ul></li>
+                <li>まとめ</li>
                 </ul>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Other</div>
@@ -1703,7 +1825,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'> esa.io - 趣味から育てたWebサービスで生きていく</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1041857?v=3'>
                   Atsuo Fukaya
@@ -1759,7 +1884,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Yet Another Perl Cooking' data-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>Yet Another Perl Cooking</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1422834?v=3'>
                   moznion
@@ -1825,7 +1953,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='How to develop microservices with Perl' data-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>大規模でも小中規模サービスでも捗る microservices な Web サービスのつくりかた</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/9958?v=3'>
                   Kazuhiro Osawa
@@ -1893,7 +2024,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>PietでLISP処理系を書くのは難しい</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/7394250?v=3'>
                   Hideaki Nagamine
@@ -1935,7 +2069,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Perl6 on JVM: It works??' data-id='53944d48-09ba-11e5-998a-67dc7d574c3a'>Perl6 on JVM: It works??</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='53944d48-09ba-11e5-998a-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/21084?v=3'>
                   Tokuhiro Matsuno
@@ -2047,7 +2184,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Technology for reduce a mistake.' data-id='523b9508-0d77-11e5-8174-67dc7d574c3a'>うっかりをなくす技術</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='523b9508-0d77-11e5-8174-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/374550?v=3'>
                   karupanerura
@@ -2138,7 +2278,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Podcasting,  Media for Web Engineer, and CPAN' data-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/631255029/picture?type=square&amp;width=240'>
                   Yusuke Wada
@@ -2179,7 +2322,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Lightning Talks Day 1' data-id='22957e9c-1872-11e5-aca1-525412004261'>Lightning Talks Day 1</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='22957e9c-1872-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
@@ -2248,7 +2394,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en="Docker For Polyglots : Where We've Come From, and Where We Can Go" data-id='21cb8176-065b-11e5-9492-79c97d574c3a'>PolyglotのためのDocker - 我々はどこから来てどこへ向かうのか</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='21cb8176-065b-11e5-9492-79c97d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/626978806595633153/0XDpnot__bigger.png'>
                   Nathan LeClaire
@@ -2359,7 +2508,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Node/io.js past, present, future.' data-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>どうしてこうなった？ Node.jsとio.jsの分裂と統合の行方。これからどう進化していくのか？</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/206948941/wall-e_bigger.jpg'>
                   Yosuke FURUKAWA
@@ -2435,7 +2587,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>Mackerel開発におけるScalaとGo、そしてPerl</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/538947384420483072/5WmJP-fh_bigger.jpeg'>
                   songmu
@@ -2471,7 +2626,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Deep Dive into the "Out of place Artifacts" of Google Cloud Platform' data-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>Google Cloud Platformの謎テクノロジーを掘り下げる</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1623040?v=3'>
                   Kazunori Sato
@@ -2529,7 +2687,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>ISUCONの勝ち方</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/46764?v=3'>
                   Masahiro Nagano
@@ -2571,7 +2732,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Perl 5.22 and You' data-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>Perl 5.22 and You</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/30682?v=3'>
                   Ricardo Signes
@@ -2629,7 +2793,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='We organized world&#x0027;s largest hackathon "SpaceApps"' data-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>NASA主催の世界最大級ハッカソンSpaceAppsを運営した話</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599153322939916288/tRI3N4Eh_bigger.jpg'>
                   湯村 翼 Tsubasa YUMURA
@@ -2689,7 +2856,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>Docker３兄弟について</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000078453409/b6bfcd56abe9253d9e41f2e14bdd038f_bigger.jpeg'>
                   アルパカ大明神[▮▮▮▯▯▯▯▯▯▯]
@@ -2754,7 +2924,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='iOS application development introduction for Perl server-side engineer' data-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>サーバーサイドエンジニア(特にPerl)のためのiOSアプリ開発入門</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/3420?v=3'>
                   Daisuke Murase
@@ -2856,7 +3029,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Not enough availability' data-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>我々はどのように冗長化を失敗したのか</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1315074?v=3'>
                   Kenji Naito
@@ -2928,7 +3104,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>MySQLで2億件のシリアルデータと格闘したチューニングの話</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1205361823/img_791544_45327987_0_bigger.jpg'>
                   さいけん
@@ -3001,7 +3180,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Discover the Microsoft Azure!' data-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>実はホットでオープンな Microsoft Azure</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/100000459480102/picture?type=square&amp;width=240'>
                   Tatsuro Hisamori
@@ -3068,7 +3250,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='e46f9d1b-2ad1-11e5-aca1-525412004261'>ランチセッションA</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e46f9d1b-2ad1-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
@@ -3123,7 +3308,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='e34fca9d-2ad1-11e5-aca1-525412004261'>ランチセッションB</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e34fca9d-2ad1-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
@@ -3164,7 +3352,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Adventures in Refactoring' data-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>Adventures in Refactoring</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12676?v=3'>
                   Ben Lavender
@@ -3216,7 +3407,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Practical nginx module development〜C and Lua〜' data-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>実践nginxモジュール開発〜CとLua〜</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/56752?v=3'>
                   Tatsuhiko Kubo
@@ -3263,7 +3457,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Build your own container from scratch with Perl' data-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>Perlでゼロから作るコンテナ</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/951266011604370/picture?type=square&amp;width=240'>
                   Miki Horiuchi Kabe
@@ -3320,7 +3517,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Technologies for Data Analytics Platform' data-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>データ分析基盤を支える技術</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/16928?v=3'>
                   Masahiro Nakagawa
@@ -3371,7 +3571,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Advanced technic for OS upgrading in 3 minutes' data-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>3分でサービスのOSを入れ替える技術</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12301?v=3'>
                   SHIBATA Hiroshi
@@ -3415,7 +3618,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Parallelism, Concurrency, and Asynchrony in Perl 6' data-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>Parallelism, Concurrency, and Asynchrony in Perl 6</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/50259?v=3'>
                   Jonathan Worthington
@@ -3481,7 +3687,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en=' Information technology to support the Santa Claus' data-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'> サンタクロースを支えるIT技術</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/100001054610433/picture?type=square&amp;width=240'>
                   Masayuki Ishikawa
@@ -3556,7 +3765,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='897abeb2-1007-11e5-a760-d7f07d574c3a'>Perlがメインじゃない現場でもPerlを使う(AdTech現場編）</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='897abeb2-1007-11e5-a760-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/49303?v=3'>
                   Masaru Hoshino
@@ -3614,7 +3826,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Posture for Engineers' data-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>Posture for Engineers</a>
-                <div class='talk-meta'>English, 30 min</div>
+                <div class='talk-meta'>
+                  English, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/38176?v=3'>
                   Marylou Lenhart
@@ -3666,7 +3881,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Run containerized workloads with Lattice' data-id='b03162be-0052-11e5-ba92-89c77d574c3a'>Run containerized workloads with Lattice</a>
-                <div class='talk-meta'>English, 30 min</div>
+                <div class='talk-meta'>
+                  English, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='b03162be-0052-11e5-ba92-89c77d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/4757816?v=3'>
                   Etourneau Gwenn
@@ -3743,7 +3961,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='ad57ca84-13e9-11e5-aca1-525412004261'>【特別企画】YAPCあるある（仮）</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='ad57ca84-13e9-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/1261488582/picture?type=square&amp;width=240'>
                   鎌田武俊
@@ -3820,7 +4041,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>ソーシャルゲームにおける AWS 移行事例</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000732873806/db63a0f75f9a217a875fa02d2ce34c04_bigger.png'>
                   tkuchiki
@@ -3862,7 +4086,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Profiling &amp; Optimizing in Go' data-id='6bde6c69-187a-11e5-aca1-525412004261'>Profiling & Optimizing in Go</a>
-                <div class='talk-meta'>English, 60 min</div>
+                <div class='talk-meta'>
+                  English, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='6bde6c69-187a-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1376628217/brad_bigger.jpg'>
                   Brad Fitzpatrick
@@ -3919,7 +4146,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Fight the RTB market using Perl' data-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>Perl で RTB の最前線を闘い抜く</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/1121132103/picture?type=square&amp;width=240'>
                   Satoshi Ohkubo
@@ -3983,7 +4213,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='How to make the ConferenceNetwork' data-id='81342dae-1351-11e5-ab94-d9f87d574c3a'>カンファレンスネットワークの作り方</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='81342dae-1351-11e5-ab94-d9f87d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/476568469920415744/wdOm99Aa_bigger.png'>
                   CONBU
@@ -4039,7 +4272,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='About Windows for OSS Enginner' data-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>オープンソースエンジニアのための Windows入門</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/560137093/2286227_3079062002_bigger.jpg'>
                   tsubasa
@@ -4106,7 +4342,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='web over http2' data-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>HTTP2 時代の Web</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/322289?v=3'>
                   Jxck
@@ -4199,7 +4438,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Simple steps and tips to improve IT infrastructure operations' data-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>辛いことをやめる！から始まる業務改善とInfrastructure as Code</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/3685820543/1e8215b4268fef1d97891e3d61b7b361_bigger.png'>
                   Yuichiro SAITO
@@ -4240,7 +4482,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Lightning Talks Day 2' data-id='69caedbd-1872-11e5-aca1-525412004261'>Lightning Talks Day 2</a>
-                <div class='talk-meta'>Japanese, 60 min</div>
+                <div class='talk-meta'>
+                  Japanese, 60 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='69caedbd-1872-11e5-aca1-525412004261'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
@@ -4281,7 +4526,10 @@
             <div class='item'>
               <div class='content'>
                 <a class='talk-title translatable header' data-en='Closing 🎉' data-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>クロージング 🎉</a>
-                <div class='talk-meta'>Japanese, 30 min</div>
+                <div class='talk-meta'>
+                  Japanese, 30 min
+                  <div class='ui star rating' data-max-rating='1' data-talk-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'></div>
+                </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
