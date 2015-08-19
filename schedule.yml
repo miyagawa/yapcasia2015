@@ -7,15 +7,17 @@
       talks:
         - b355fa20-122e-11e5-8ba5-d9f87d574c3a
         - 621948f2-0d46-11e5-a403-67dc7d574c3a
+      dur: 30
     - hour: "19:40"
       talks:
         - 39a72c04-10e3-11e5-b8ab-d7f07d574c3a
         - f5aa5054-12fd-11e5-b4c9-d9f87d574c3a
+      dur: 30
     - hour: "20:20"
       talks:
         - 5f5cad74-004a-11e5-acf4-89c77d574c3a
         - 7d62caf8-12f4-11e5-881c-d9f87d574c3a
-
+      dur: 30
 - date: 8/21
   rooms:
     - Track A Hall
@@ -27,6 +29,7 @@
     - hour: "9:45"
       talks:
         - 1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a
+      dur: 30
     - hour: "10:00"
       talks:
         - a636430c-0fbf-11e5-8a02-43ec7d574c3a
@@ -116,4 +119,5 @@
     - hour: "17:50"
       talks:
         - 6964fd88-f5e8-11e4-b323-49b37d574c3a
+      dur: 30
       

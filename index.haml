@@ -9,6 +9,9 @@
   %script{type: "text/javascript", src: "//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.js"}
   :css
     .talk-title { color: #000; font-weight: bold; }
+    .talk { height: 12em }
+    .talk-meta { color: #888 }
+    .speaker { margin-top: 0.4em }
   :javascript
     jQuery(function(){
       $('.talk-title').click(function(){
@@ -32,7 +35,7 @@
       %h2.ui.header.aligned.center.horizontal.divider{id: "day-#{i}"}
         %i.icon.calendar
         = event["date"]
-      .ui.grid
+      .ui.grid.divided
         .row
           .one.wide.column
           - event["rooms"].each do |room|
@@ -43,8 +46,9 @@
             .one.wide.column
               - slot["hour"].each do |hour|
                 .ui.vertical.segment= hour
+            - dur = slot["dur"] == 30 ? "30" : "60"
             - slot["talks"].each do |talks|
-              .three.wide.column
+              .three.wide.column{class: "slot#{dur}"}
                 - talks.each do |talk|
                   - if talk
                     .ui.modal{id: "modal-#{talk['id']}"}
@@ -63,11 +67,12 @@
                           %i.icon.calendar
                           Google Calendar
                         .ui.cancel.button Close
-                    .ui.cards
-                      .card{id: talk["id"]}
+                    .ui.vertical.segment.talk{id: talk["id"]}
+                      .item
                         .content
-                          %a.talk-title.alternative{data: {"id": talk["id"], "alt": talk["title_en"]} }= talk["title"]
-                          .meta= talk["language"] + ", " + talk["duration"] + " min"
-                          .description
-                            %img.ui.avatar.imager{src: talk["avatar"]}
+                          %a.talk-title.alternative.header{data: {"id": talk["id"], "alt": talk["title_en"]} }= talk["title"]
+                          .talk-meta= talk["language"] + ", " + talk["duration"] + " min"
+                          .description.speaker
+                            %img.ui.avatar.image{src: talk["avatar"]}
                             = talk["speaker"]
+
