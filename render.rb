@@ -44,6 +44,7 @@ def get_talk_details(talk)
     "title_en" => talk["title_en"],
     "avatar" => tweak_image(talk["speaker"]["profile_image_url"]),
     "speaker" => talk["speaker"]["name"],
+    "nickname" => talk["speaker"]["nickname"],
     "description" => talk["abstract_html"],
     "labels" => [ ucfirst(talk["category"]), ucfirst(talk["material_level"]) ],
     "duration" => talk["duration"],
