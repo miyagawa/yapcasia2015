@@ -52,7 +52,7 @@ def embed(url)
     oembed("http://www.slideshare.net/api/oembed/2?url=#{URI.encode_www_form_component url}&maxwidth=600&format=json")
   when /speakerdeck\.com\//
     oembed("http://speakerdeck.com/oembed.json?url=#{URI.encode_www_form_component url}&maxwidth=600")
-  when /docs\.google\.com\/presentation\/d\/(.*?)\/pub/
+  when /docs\.google\.com\/presentation\/d\/(.*?)\/(pub|mobile)/
     %Q(<iframe width="600" height="480" src="https://docs.google.com/presentation/d/#{$1}/embed" frameborder="0"></iframe>)
   when /drive\.google\.com\/open\?id=(.*)/
     %Q(<iframe width="600" height="480" src="https://drive.google.com/file/d/#{$1}/preview" frameborder="0"></iframe>)
