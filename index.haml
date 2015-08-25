@@ -49,7 +49,11 @@
       }
 
       if (location.hash) {
-        $("#modal-" + location.hash.substring(1)).modal({ transition: 'fade', duration: 200 }).modal("show");
+        $("#modal-" + location.hash.substring(1)).modal({
+          transition: 'fade',
+          duration: 200,
+          onShow: function(){ $('.embed', this).each(function(){ $(this).html($(this).data('html')) }) }
+        }).modal("show");
       }
     });
   %body{style: "padding: 1em"}
