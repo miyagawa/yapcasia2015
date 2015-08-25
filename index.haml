@@ -11,13 +11,17 @@
     .talk-title { color: #000; font-weight: bold; }
     .talk { height: 12em }
     .talk-meta { color: #888 }
-    .speaker { margin-top: 0.4em }
+    .talk-materials { margin-top: 0.5em }
+    .speaker { margin-top: 0.5em }
+    .presentation { width: 600px; height: 480px }
+    .embed iframe { width: 600px; height: 480px }
   :javascript
     jQuery(function(){
-      $('.talk-title').click(function(){
+      $('.talk-open').click(function(){
         $("#modal-" + $(this).data('id')).modal({
           duration: 100,
           transition: 'fade',
+          onShow: function(){ $('.embed', this).each(function(){ $(this).html($(this).data('html')) }) },
           onHide: function(){ history.replaceState({}, "", '#') }
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
@@ -76,23 +80,28 @@
                           .ui.header
                             %img.ui.image.avatar{src: talk["avatar"], alt: talk["speaker"]}
                             = talk["speaker"]
+                          - if talk["presentation"]
+                            .presentation
+                              .embed{data: {html: talk["presentation"]}}
                           = talk["description"]
                           .ui.tag.label= talk["language"]
                           - talk["labels"].each do |label|
                             .ui.tag.label= label
                       .actions
-                        %a.ui.button.blue{href: talk["gcal"], target: "_blank"}
-                          %i.icon.calendar
-                          Google Calendar
                         .ui.cancel.button Close
                     .ui.vertical.segment.talk{id: talk["id"]}
                       .item
                         .content
-                          %a.talk-title.translatable.header{data: {"id": talk["id"], "en": talk["title_en"]} }= talk["title"]
+                          %a.talk-title.talk-open.translatable.header{data: {"id": talk["id"], "en": talk["title_en"]} }= talk["title"]
                           .talk-meta
                             = talk["language"] + ", " + talk["duration"] + " min"
                             .ui.star.rating{data:{"max-rating": 1, "talk-id": talk['id']}}
+                          .talk-materials.talk-open{data:{id: talk["id"]}}
+                            - if talk["presentation"]
+                              .ui.label.teal.tiny
+                                %i.icon.desktop
+                                Slides
                           .description.speaker
                             %img.ui.avatar.image{src: talk["avatar"]}
                             = talk["speaker"]
-
+                            

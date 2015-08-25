@@ -6,7 +6,9 @@ require 'nokogiri'
 require 'open-uri'
 require 'json'
 require 'uri'
+require 'open_uri_redirections'
 require 'time'
+require 'active_support/cache'
 
 def tweak_image(url)
   case url
@@ -37,6 +39,30 @@ def gcal_link(talk)
   uri
 end
 
+def oembed(url)
+  cache = ActiveSupport::Cache::FileStore.new('.cache', expires_in: 1.day)
+  cache.fetch("oembed:#{url}") do
+    JSON.parse(open(url, allow_redirections: :safe).read)["html"]
+  end
+end
+
+def embed(url)
+  case url
+  when /slideshare/
+    oembed("http://www.slideshare.net/api/oembed/2?url=#{URI.encode_www_form_component url}&maxwidth=600&format=json")
+  when /speakerdeck\.com\//
+    oembed("http://speakerdeck.com/oembed.json?url=#{URI.encode_www_form_component url}&maxwidth=600")
+  when /docs\.google\.com\/presentation\/d\/(.*?)\/pub/
+    %Q(<iframe width="600" height="480" src="https://docs.google.com/presentation/d/#{$1}/embed" frameborder="0"></iframe>)
+  when /drive\.google\.com\/open\?id=(.*)/
+    %Q(<iframe width="600" height="480" src="https://drive.google.com/file/d/#{$1}/preview" frameborder="0"></iframe>)
+  when nil
+    nil
+  else
+    %Q(<iframe width="600" height="480" src="#{url}" width="600" height="480" frameborder="0"></iframe>)
+  end
+end
+
 def get_talk_details(talk)
   {
     "id" => talk["id"],
@@ -50,6 +76,8 @@ def get_talk_details(talk)
     "duration" => talk["duration"],
     "language" => talk["language"] == "ja" ? "Japanese" : "English",
     "gcal" => gcal_link(talk),
+    "video_url" => talk["video_url"],
+    "presentation" => embed(talk["slide_url"]),
   }
 end
 

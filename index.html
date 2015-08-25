@@ -11,14 +11,18 @@
     .talk-title { color: #000; font-weight: bold; }
     .talk { height: 12em }
     .talk-meta { color: #888 }
-    .speaker { margin-top: 0.4em }
+    .talk-materials { margin-top: 0.5em }
+    .speaker { margin-top: 0.5em }
+    .presentation { width: 600px; height: 480px }
+    .embed iframe { width: 600px; height: 480px }
   </style>
   <script>
     jQuery(function(){
-      $('.talk-title').click(function(){
+      $('.talk-open').click(function(){
         $("#modal-" + $(this).data('id')).modal({
           duration: 100,
           transition: 'fade',
+          onShow: function(){ $('.embed', this).each(function(){ $(this).html($(this).data('html')) }) },
           onHide: function(){ history.replaceState({}, "", '#') }
         }).modal("show");
         history.replaceState({}, "", '#' + $(this).data('id'));
@@ -78,6 +82,9 @@
                   <img alt='SHIBATA Hiroshi' class='ui image avatar' src='https://avatars.githubusercontent.com/u/12301?v=3'>
                   SHIBATA Hiroshi
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/24Wbxp2GBq8RS7" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/hsbt/the-story-of-language-development" title="The story of language development" target="_blank"&gt;The story of language development&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/hsbt" target="_blank"&gt;Hiroshi SHIBATA&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
+                </div>
                 <p>インターネットの普及とともに、インターネットを支える主要技術の多くを構築する OSS はより一般的なものとなりました。特に Web サービスやモバイルアプリケーションを開発する会社にとっては、コードを書く上で避けては通れないものとなりました。</p>
                 
                 <p>OSS は小さいライブラリから、プロダクションで使用するようなフレームワーク、大規模なサービスを支えるミドルウェア、OS や言語のようなプログラミングの根幹とも言えるような要素など、ソフトウェアのコードベースの大小こそあるものの、それらは全て <a href="http://www.opensource.jp/osd/osd-japanese.html">OSD</a> に準拠しているものであり、誰でもコードを読むことができ、ソフトウェアによってはコントリビュートすることも可能です。</p>
@@ -91,20 +98,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E8%A8%80%E8%AA%9E%E9%96%8B%E7%99%BA%E3%81%AE%E7%8F%BE%E5%A0%B4+-+SHIBATA+Hiroshi&amp;dates=20150820T100000Z%2F20150820T103000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='The story of language development' data-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>言語開発の現場</a>
+                <a class='talk-title talk-open translatable header' data-en='The story of language development' data-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>言語開発の現場</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='b355fa20-122e-11e5-8ba5-d9f87d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12301?v=3'>
@@ -170,20 +179,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=PHP%E5%B8%9D%E5%9B%BD%E3%81%AE%E9%80%86%E8%A5%B2%EF%BC%81%EF%BC%88%E3%82%92%E9%A1%98%E3%81%86PHPer%E3%81%8C%E8%A9%B1%E3%81%99%E6%9C%80%E8%BF%91%E3%81%AEPHP%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%83%84%E3%82%A2%E3%83%BC+PHP7%E5%AF%BE%E5%BF%9C%E7%89%88%EF%BC%89+-+%E9%B6%89&amp;dates=20150820T100000Z%2F20150820T103000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='621948f2-0d46-11e5-a403-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='The PHP Empire Strikes Back!!!' data-id='621948f2-0d46-11e5-a403-67dc7d574c3a'>PHP帝国の逆襲！（を願うPHPerが話す最近のPHPについてのクイックツアー PHP7対応版）</a>
+                <a class='talk-title talk-open translatable header' data-en='The PHP Empire Strikes Back!!!' data-id='621948f2-0d46-11e5-a403-67dc7d574c3a'>PHP帝国の逆襲！（を願うPHPerが話す最近のPHPについてのクイックツアー PHP7対応版）</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='621948f2-0d46-11e5-a403-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='621948f2-0d46-11e5-a403-67dc7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000122330373/c9162e04e2a5fb779758cc4f0a13c2c0_bigger.jpeg'>
@@ -200,7 +207,7 @@
         </div>
         <div class='column slot30 three wide'>
           <div class='ui modal' id='modal-39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>
-            <div class='header translatable'>perlワンライナー入門</div>
+            <div class='header translatable'>Perlワンライナー入門</div>
             <div class='content'>
               <div class='description'>
                 <div class='ui header'>
@@ -210,13 +217,13 @@
                 <h2>Perlワンライナー便利です</h2>
                 
                 <p>たくさんの技術があるなかで、適切な場面で適切な技術を選択するのは大切です。
-                自分が働いているフリークアウトはアドテクと呼ばれる業態です。perlで業務を行っています。
+                自分が働いているフリークアウトはアドテクと呼ばれる業態です。Perlで業務を行っています。
                 弊社の業務ではログファイルなどで何十万行程度のテキストファイルからアドホックにデータを抽出・加工するような業務が頻出します。
-                自分はそういった場面ではperlを選択するのが最善ではないかと思っています。</p>
+                自分はそういった場面ではPerlを選択するのが最善ではないかと思っています。</p>
                 
                 <p>pythonで5分かかる作業を30秒で書いたワンライナーがなんとかしてくれる様子は「Practical Extraction and Report Language（実用データ取得レポート作成言語）」の面目躍如といった趣があります。</p>
                 
-                <p>似た領域の技術にawkがありますが、かなりややこしいことまで出来るperlワンライナーをおぼえておいても損はないはずです（<code>-M</code>オプションもございます）</p>
+                <p>似た領域の技術にawkがありますが、かなりややこしいことまで出来るPerlワンライナーをおぼえておいても損はないはずです（<code>-M</code>オプションもございます）</p>
                 
                 <h2>内容</h2>
                 
@@ -225,7 +232,16 @@
                 <ul>
                 <li>ワンライナー入門</li>
                 <li>grep, awkの代わりにperlを使う方法</li>
-                <li>あるあるな業務へのワンライナー例</li>
+                <li>あるあるな業務へのワンライナー例紹介</li>
+                </ul>
+                
+                <p>※ ハンズオンはwindows環境の動作未検証です</p>
+                
+                <h3>ハンズオン用の資料</h3>
+                
+                <ul>
+                <li>スライド: <a href="https://www.swipe.to/7299cm#page=Z0S6J59Zt">https://www.swipe.to/7299cm#page=Z0S6J59Zt</a></li>
+                <li>$ git clone https://github.com/sakamossan/yapc_perl_oneliner_beginner.git</li>
                 </ul>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Tutorial</div>
@@ -233,20 +249,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=perl%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC%E5%85%A5%E9%96%80+-+Akira+Sakamoto&amp;dates=20150820T104000Z%2F20150820T111000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>perlワンライナー入門</a>
+                <a class='talk-title talk-open translatable header' data-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>Perlワンライナー入門</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='39a72c04-10e3-11e5-b8ab-d7f07d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/929494707114841/picture?type=square&amp;width=240'>
@@ -264,6 +278,9 @@
                 <div class='ui header'>
                   <img alt='skozawa' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1711030185/header_title_bigger.jpg'>
                   skozawa
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/bVx5ctVFAPXH6h" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/shunsukekozawa5/ss-51890590" title="はてなブックマークのトピックページの裏側 in YAPC::Asia Tokyo 2015" target="_blank"&gt;はてなブックマークのトピックページの裏側 in YAPC::Asia Tokyo 2015&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/shunsukekozawa5" target="_blank"&gt;Shunsuke Kozawa&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>はてなブックマークの「<a href="http://b.hatena.ne.jp/topiclist">トピックページ</a>」の作り方について解説します。
                 <a href="http://b.hatena.ne.jp/topiclist">トピックページ</a>とは、話題の記事の中から関連性の高い記事をまとめることにより、インターネット上で話題となったトピックを閲覧できるページです。
@@ -287,20 +304,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%81%AE%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E8%A3%8F%E5%81%B4+-+skozawa&amp;dates=20150820T104000Z%2F20150820T111000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>はてなブックマークのトピックページの裏側</a>
+                <a class='talk-title talk-open translatable header' data-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>はてなブックマークのトピックページの裏側</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='f5aa5054-12fd-11e5-b4c9-d9f87d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1711030185/header_title_bigger.jpg'>
@@ -324,6 +343,9 @@
                   <img alt='tagomoris' class='ui image avatar' src='http://pbs.twimg.com/profile_images/525991223060746241/_ORoKYuX_bigger.png'>
                   tagomoris
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/3Q3IdJJc6HDWfW" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/tagomoris/how-to-createimprove-oss-products-and-its-community" title="How to create/improve OSS products and its community" target="_blank"&gt;How to create/improve OSS products and its community&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/tagomoris" target="_blank"&gt;SATOSHI TAGOMORI&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
+                </div>
                 <p>OSSとして公開されるソフトウェアは多くありますが、そのうち広く世に出るものはあまり多くありません。また開発者コミュニティやユーザコミュニティが形成されるところまで成長するものはごく一部といって良いでしょう。</p>
                 
                 <p>ライブラリ等ではそれでも特に問題はありませんが、高機能なミドルウェアなどになると多くのユーザがつかないとオリジナル開発者が想定した以外のユースケース発見やコーナーケースにおけるバグ発見などが十分に行われず、プロダクトの品質も上がらない、といったようなこともあります。
@@ -346,20 +368,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E6%88%91%E3%80%85%E3%81%AB%E3%81%A7%E3%81%8D%E3%82%8BOSS%E3%81%A8%E3%81%9D%E3%81%AE%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%81%AE%E8%82%B2%E3%81%A6%E3%81%8B%E3%81%9F+-+tagomoris&amp;dates=20150820T112000Z%2F20150820T115000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='How to create/improve OSS products and its community' data-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>我々にできるOSSとそのコミュニティの育てかた</a>
+                <a class='talk-title talk-open translatable header' data-en='How to create/improve OSS products and its community' data-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>我々にできるOSSとそのコミュニティの育てかた</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='5f5cad74-004a-11e5-acf4-89c77d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/525991223060746241/_ORoKYuX_bigger.png'>
@@ -421,20 +445,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E6%8A%80%E8%A1%93%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%93%E3%81%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%9E%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AB%E5%83%95%E3%81%AE%E8%AA%9E%E3%82%8B%E3%81%93%E3%81%A8+-+yuuki&amp;dates=20150820T112000Z%2F20150820T115000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='The Art of Blogging Technologies' data-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>技術ブログを書くことについて語るときに僕の語ること</a>
+                <a class='talk-title talk-open translatable header' data-en='The Art of Blogging Technologies' data-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>技術ブログを書くことについて語るときに僕の語ること</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='7d62caf8-12f4-11e5-881c-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/3279630066/5fec6321a3aca8de271ccb3fae606d2a_bigger.png'>
@@ -489,20 +511,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Opening+-+Daisuke+Maki&amp;dates=20150821T004500Z%2F20150821T010000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Opening' data-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>Opening</a>
+                <a class='talk-title talk-open translatable header' data-en='Opening' data-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>Opening</a>
                 <div class='talk-meta'>
                   Japanese, 15 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='1ffa6f7a-f5e8-11e4-a4ec-49b37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
@@ -535,20 +555,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%83%A1%E3%83%AA%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9%EF%BC%81+-+Larry+Wall&amp;dates=20150821T010000Z%2F20150821T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Merry Christmas!' data-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>メリークリスマス！</a>
+                <a class='talk-title talk-open translatable header' data-en='Merry Christmas!' data-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>メリークリスマス！</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='a636430c-0fbf-11e5-8a02-43ec7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/162146?v=3'>
@@ -580,20 +598,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Managing+Containers+at+Scale+with+CoreOS+and+Kubernetes+-+Kelsey+Hightower&amp;dates=20150821T021000Z%2F20150821T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e19fe827-13c1-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Managing Containers at Scale with CoreOS and Kubernetes' data-id='e19fe827-13c1-11e5-aca1-525412004261'>Managing Containers at Scale with CoreOS and Kubernetes</a>
+                <a class='talk-title talk-open translatable header' data-en='Managing Containers at Scale with CoreOS and Kubernetes' data-id='e19fe827-13c1-11e5-aca1-525412004261'>Managing Containers at Scale with CoreOS and Kubernetes</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e19fe827-13c1-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e19fe827-13c1-11e5-aca1-525412004261'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1123322?v=3'>
@@ -636,20 +652,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=DeepLearning+%E3%81%AE%E5%89%8D%E3%81%AB%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%93%E3%81%A8%E3%81%8C%E3%81%82%E3%82%8B%EF%BC%81+%E5%86%8D%E5%B8%B0%E5%9E%8B%E3%81%AE%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%AB%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%84%E8%87%AA%E5%B7%B1%E7%B5%84%E7%B9%94%E5%8C%96%E3%83%9E%E3%83%83%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%AA%9E%E3%82%8D%E3%81%86+-+muddydixon&amp;dates=20150821T021000Z%2F20150821T024000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en="Let's talk about recurrent neural network and self-organizing before deep learning!" data-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>DeepLearning の前に知っておくことがある！ 再帰型のニューラルネットワークや自己組織化マップについて語ろう</a>
+                <a class='talk-title talk-open translatable header' data-en="Let's talk about recurrent neural network and self-organizing before deep learning!" data-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>DeepLearning の前に知っておくことがある！ 再帰型のニューラルネットワークや自己組織化マップについて語ろう</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='f283a924-fddc-11e4-90cd-bdc07d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/10035?v=3'>
@@ -665,6 +679,9 @@
                 <div class='ui header'>
                   <img alt='jigyakkuma' class='ui image avatar' src='http://pbs.twimg.com/profile_images/599475415766302720/IrXs2kkC_bigger.png'>
                   jigyakkuma
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="https://docs.google.com/presentation/d/1NO0j91NBwoiB-EuwERzEVDktvSciQjBFWe0gCifx-I8/embed" frameborder="0"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>はじめまして、こんにちは！<a href="https://twitter.com/jigyakkuma_">jigyakkuma</a>です！！！！！１ <br />
                 Infrastructure as Codeが叫ばれる昨今、ドメインやDNS管理・運用にもその波が押し寄せておりますが皆様いかがお過ごしでしょうか。  </p>
@@ -707,20 +724,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%81%9D%E3%82%8C%E3%81%AF%E5%83%95%E3%81%9F%E3%81%A1%E3%81%AE%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%BBDNS%E9%81%8B%E7%94%A8+-+jigyakkuma&amp;dates=20150821T024000Z%2F20150821T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>それは僕たちのドメイン・DNS運用</a>
+                <a class='talk-title talk-open translatable header' data-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>それは僕たちのドメイン・DNS運用</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e8eebd70-f906-11e4-8f91-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599475415766302720/IrXs2kkC_bigger.png'>
@@ -739,9 +758,12 @@
                   <img alt='Teppei Sato' class='ui image avatar' src='https://avatars.githubusercontent.com/u/26476?v=3'>
                   Teppei Sato
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/3aH36zv6gKAOcy" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/teppeis/effective-es6" title="Effective ES6" target="_blank"&gt;Effective ES6&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/teppeis" target="_blank"&gt;teppeis &lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
+                </div>
                 <h1>いまだにES5時代のJS書いてませんか？</h1>
                 
-                <p>今年6月に公開されるJavaScript仕様の超大型アップデート <strong>ES6</strong> を紹介し、それによって変わるJSコーディングのベストプラクティスについて話します。</p>
+                <p>今年6月に公開されたJavaScript仕様の超大型アップデート <strong>ES6</strong> を紹介し、それによって変わるJSコーディングのベストプラクティスについて話します。</p>
                 
                 <hr />
                 
@@ -751,27 +773,21 @@
                 
                 <p>そんなJavaScriptとの長年の格闘を経て、<a href="http://www.amazon.co.jp/dp/4798131113">Effective JavaScript</a>、<a href="http://www.oreilly.co.jp/books/9784873113913/">JavaScript: The Good Parts</a>といったベストプラクティスが生み出され、普及していきました。</p>
                 
-                <p>ときは流れて、<strong>今年6月に待望の最新仕様ECMAScript 6が公開されます。</strong> ES5から5年、大幅なアップデートとなるES6は、これまであったJavaScriptの多くの落とし穴をふさいでくれます。ES5時代に使われたベストプラクティスの中には、ES6の登場によって置き換えられるものが多数あります。</p>
+                <p>ときは流れて、<strong>今年6月に待望の最新仕様ECMAScript 6が公開されました。</strong> ES5から5年、大幅なアップデートとなるES6は、これまであったJavaScriptの多くの落とし穴をふさいでくれます。ES5時代に使われたベストプラクティスの中には、ES6の登場によって置き換えられるものが多数あります。</p>
                 
-                <p>このトークでは、これまで信じられてきたJavaScriptコーディングのベストプラクティスと対比して、これからのES6時代のベストプラクティスを提示します。また、各ブラウザの実装状況、トランスパイラの存在、ES6以降の仕様策定などを踏まえて、これからのES6との付き合い方についても話します。</p>
+                <p>このトークでは、ES6で導入された新しい機能を紹介し、それによってこれまでのベストプラクティスがどう変化するかを話します。また、各ブラウザの実装状況、トランスパイラの存在、ES6以降の仕様策定などを踏まえて、これからのES6との付き合い方についても話します。</p>
                 
-                <p>Webに関わる全てのエンジニアにとって、JavaScriptの現状＆未来確認に役立つトークになればと思います。</p>
+                <p>JavaScriptのエキスパート向けではなく、Webに関わる全てのエンジニアにとって、JavaScriptの現状＆未来確認に役立つトークになればと思います。</p>
                 
-                <h2>話すこと（予定）</h2>
+                <h2>話す内容</h2>
                 
                 <ul>
-                <li>5分で分かるES6</li>
-                <li>ES6時代に不要になるベストプラクティス</li>
-                <li>ES6時代の新しいベストプラクティス</li>
+                <li>ES6とは何か？</li>
                 <li>BabelでGO!! 今すぐ使えるES6</li>
-                <li>ES7, ES8 and ...</li>
+                <li>ES6の主要機能の紹介</li>
+                <li>ES6時代に不要になるベストプラクティス</li>
+                <li>ES2016, ES2017 and ...</li>
                 <li>これからのES6との付き合い方</li>
-                </ul>
-                
-                <h2>話さないこと</h2>
-                
-                <ul>
-                <li>React vs. AngularJS</li>
                 </ul>
                 
                 <h2>スピーカー</h2>
@@ -787,20 +803,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Effective+ES6+-+Teppei+Sato&amp;dates=20150821T021000Z%2F20150821T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='44721562-10e4-11e5-88a0-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Effective ES6' data-id='44721562-10e4-11e5-88a0-d7f07d574c3a'>Effective ES6</a>
+                <a class='talk-title talk-open translatable header' data-en='Effective ES6' data-id='44721562-10e4-11e5-88a0-d7f07d574c3a'>Effective ES6</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='44721562-10e4-11e5-88a0-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='44721562-10e4-11e5-88a0-d7f07d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/26476?v=3'>
@@ -818,6 +836,9 @@
                 <div class='ui header'>
                   <img alt='Kazuhiro Homma' class='ui image avatar' src='https://avatars.githubusercontent.com/u/849165?v=3'>
                   Kazuhiro Homma
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="http://kazuph.github.io/presentation/yapc-2015-iot-presentation/#1" width="600" height="480" frameborder="0"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>週末兼業から始まったプロジェクト</p>
                 
@@ -848,20 +869,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Web%E7%94%B1%E6%9D%A5%E3%81%AE%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E5%8D%8A%E5%B9%B4%E9%96%93%E3%81%AE%E3%81%99%E3%81%B9%E3%81%A6+%E3%80%9CWeb%E3%81%A8iOS%E3%81%A8BLE%E3%81%A8%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%AE%E3%81%93%E3%81%A8%E3%80%9C+-+Kazuhiro+Homma&amp;dates=20150821T021000Z%2F20150821T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='4bab2728-00fa-11e5-9931-79c97d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='All of embed engineer from Web - Web, iOS, BLE and Hardware device -' data-id='4bab2728-00fa-11e5-9931-79c97d574c3a'>Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜</a>
+                <a class='talk-title talk-open translatable header' data-en='All of embed engineer from Web - Web, iOS, BLE and Hardware device -' data-id='4bab2728-00fa-11e5-9931-79c97d574c3a'>Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='4bab2728-00fa-11e5-9931-79c97d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='4bab2728-00fa-11e5-9931-79c97d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/849165?v=3'>
@@ -879,6 +902,9 @@
                 <div class='ui header'>
                   <img alt='aereal' class='ui image avatar' src='https://avatars.githubusercontent.com/u/87649?v=3'>
                   aereal
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="487" id="talk_frame_309531" mozallowfullscreen="true" src="//speakerdeck.com/player/31d7f68853954d9cb25d4cc8ddb7ae79" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>Miiverse とは任天堂株式会社が運営しているウェブサービスであり、世界中の Wii U やニンテンドー3DS、そして PC やスマートデバイスから利用することができます。</p>
                 
@@ -929,20 +955,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E4%B8%96%E7%95%8C%E5%B1%95%E9%96%8B%E3%81%99%E3%82%8B%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93+-+aereal&amp;dates=20150821T021000Z%2F20150821T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>世界展開する大規模ウェブサービスのデプロイを支える技術</a>
+                <a class='talk-title talk-open translatable header' data-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>世界展開する大規模ウェブサービスのデプロイを支える技術</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='9ec2791c-05e5-11e5-81fa-79c97d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/87649?v=3'>
@@ -966,6 +994,9 @@
                   <img alt='Yukihiro "Matz" Matsumoto' class='ui image avatar' src='https://avatars.githubusercontent.com/u/30733?v=3'>
                   Yukihiro "Matz" Matsumoto
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="https://drive.google.com/file/d/0BwazarpZ-dOvNFAtOXZEcmQyblE/preview" frameborder="0"&gt;&lt;/iframe&gt;'></div>
+                </div>
                 <p>TBD</p>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Other</div>
@@ -973,20 +1004,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=TBD+-+Yukihiro+%22Matz%22+Matsumoto&amp;dates=20150821T041000Z%2F20150821T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='cc0ec485-1879-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='cc0ec485-1879-11e5-aca1-525412004261'>TBD</a>
+                <a class='talk-title talk-open translatable header' data-id='cc0ec485-1879-11e5-aca1-525412004261'>TBD</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='cc0ec485-1879-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='cc0ec485-1879-11e5-aca1-525412004261'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/30733?v=3'>
@@ -1004,6 +1037,9 @@
                 <div class='ui header'>
                   <img alt='Toru Kobayashi' class='ui image avatar' src='https://avatars.githubusercontent.com/u/250407?v=3'>
                   Toru Kobayashi
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309190" mozallowfullscreen="true" src="//speakerdeck.com/player/4d78b0afe4fa4e078544e80db2eb8bd1" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>ここ最近のフロントエンドに対しては、</p>
                 
@@ -1035,7 +1071,7 @@
                 <ul>
                 <li>JavaScript Framework(library)</li>
                 <li>Isomorphic</li>
-                <li>Reactive programming</li>
+                <li>Functional Reactive programming</li>
                 <li>Build tools</li>
                 <li>ES6, types, AST</li>
                 <li>Service Worker</li>
@@ -1050,20 +1086,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E4%BB%8A%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%81%A7%E4%BD%95%E3%81%8C%E8%B5%B7%E3%81%93%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%8B+-+Toru+Kobayashi&amp;dates=20150821T041000Z%2F20150821T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='94051590-fb11-11e4-a39d-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en="What's happening in frontend now?" data-id='94051590-fb11-11e4-a39d-8ab37d574c3a'>今フロントエンドで何が起こっているのか</a>
+                <a class='talk-title talk-open translatable header' data-en="What's happening in frontend now?" data-id='94051590-fb11-11e4-a39d-8ab37d574c3a'>今フロントエンドで何が起こっているのか</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='94051590-fb11-11e4-a39d-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='94051590-fb11-11e4-a39d-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/250407?v=3'>
@@ -1081,6 +1119,9 @@
                 <div class='ui header'>
                   <img alt='macopy nnid:mackee_w' class='ui image avatar' src='http://pbs.twimg.com/profile_images/419456734264954880/FYDksW9H_bigger.jpeg'>
                   macopy nnid:mackee_w
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309297" mozallowfullscreen="true" src="//speakerdeck.com/player/c20fbe0ada9e41d888f09f19eb69dc4a" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>空をとぶということは有史以来の人類の夢である。それゆえ実現するには相応の困難が待ち構えている。</p>
                 
@@ -1135,20 +1176,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%81%A9%E3%81%86%E3%81%97%E3%81%A6%E3%82%82Perl%E3%81%A7%E3%83%89%E3%83%AD%E3%83%BC%E3%83%B3%E3%82%92%E9%A3%9B%E3%81%B0%E3%81%97%E3%81%9F%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%8F%E3%83%83%E3%82%AF%E6%A6%82%E8%AB%96+-+macopy+nnid%3Amackee_w&amp;dates=20150821T041000Z%2F20150821T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Make Drone written in Perl' data-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>どうしてもPerlでドローンを飛ばしたい人のためのハードウェアハック概論</a>
+                <a class='talk-title talk-open translatable header' data-en='Make Drone written in Perl' data-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>どうしてもPerlでドローンを飛ばしたい人のためのハードウェアハック概論</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='a668ef3e-080b-11e5-b2b4-79c97d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/419456734264954880/FYDksW9H_bigger.jpeg'>
@@ -1160,38 +1203,45 @@
         </div>
         <div class='column slot60 three wide'>
           <div class='ui modal' id='modal-dead6890-09b7-11e5-998a-67dc7d574c3a'>
-            <div class='header translatable' data-en='Web Application Platform for the HTTP/2 and Cloud Era'>HTTP/2 & クラウド時代のウェブアプリケーション実行基盤</div>
+            <div class='header translatable' data-en='Website Architecture for HTTP/2 Era'>HTTP/2時代のウェブサイト設計</div>
             <div class='content'>
               <div class='description'>
                 <div class='ui header'>
                   <img alt='Kazuho Oku' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1656455610/__________2011-11-25_12.16.30__bigger.png'>
                   Kazuho Oku
                 </div>
-                <p>ウェブアプリケーションの実行基盤は、NCSA Httpd と CGI の組み合わせに始まり、Apache と専用モジュールを組み合わせる手法を経て、リバースプロキシと HTTP を理解するアプリケーションサーバを使う現在の形へと進化してきました。</p>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/xPIDup4I1Z0fS6" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/kazuho/http2-51888328" title="HTTP/2時代のウェブサイト設計" target="_blank"&gt;HTTP/2時代のウェブサイト設計&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/kazuho" target="_blank"&gt;Kazuho Oku&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
+                </div>
+                <p>2015年5月の RFC 化完了以降、主要なウェブブラウザの HTTP/2 対応が急速に進んでいます。今年末までには、HTTPS トラフィックの過半は HTTP/2 を利用するようになるでしょう。</p>
                 
-                <p>そして、そのアーキテクチャもまた、HTTP/2 の登場、マイクロサービシズやクラウドの一般化といった要素により変化が求められるようになってきています。</p>
+                <p>本セッションでは、先進的な HTTP/2 サーバとして注目されている <a href="https://h2o.examp1e.net">H2O</a> の主開発者である奥一穂が、HTTP/2 策定の背景と HTTP/1.1 に対する優位性、HTTP/2 時代にむけたウェブサイト設計のポイントについて説明します。</p>
                 
-                <p>本セッションでは、Server::Starter や HTTP::Parser::XS, Starlet といった多くのウェブアプリケーションで使われているモジュールの開発者であり、また、HTTP/2 時台のウェブサーバとして注目されている H2O の開発者でもある講演者が、これからの時代にふさわしいウェブアプリケーション実行基盤について説明します。</p>
+                <p>Since the completion of the standardization process in May 2015, Web browser vendors are rushing to support HTTP/2.  It is likely that the majority of HTTPS traffic will be using HTTP/2 by the end of this year.</p>
+                
+                <p>In this session, Kazuho Oku, the lead developer of <a href="https://h2o.examp1e.net">H2O</a> which is gaining world-wide attention for its advanced features in its HTTP/2 support, talks about the background of HTTP/2 specification, its advantages over HTTP/1.1, and how to architect the websites for the HTTP/2 era.</p>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Infra</div>
                 <div class='ui tag label'>Regular</div>
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=HTTP%2F2+%26+%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E6%99%82%E4%BB%A3%E3%81%AE%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%AE%9F%E8%A1%8C%E5%9F%BA%E7%9B%A4+-+Kazuho+Oku&amp;dates=20150821T041000Z%2F20150821T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='dead6890-09b7-11e5-998a-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Web Application Platform for the HTTP/2 and Cloud Era' data-id='dead6890-09b7-11e5-998a-67dc7d574c3a'>HTTP/2 & クラウド時代のウェブアプリケーション実行基盤</a>
+                <a class='talk-title talk-open translatable header' data-en='Website Architecture for HTTP/2 Era' data-id='dead6890-09b7-11e5-998a-67dc7d574c3a'>HTTP/2時代のウェブサイト設計</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='dead6890-09b7-11e5-998a-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='dead6890-09b7-11e5-998a-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1656455610/__________2011-11-25_12.16.30__bigger.png'>
@@ -1209,6 +1259,9 @@
                 <div class='ui header'>
                   <img alt='fujiwara' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1295745651/fujiwara-icon-s_bigger.png'>
                   fujiwara
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309280" mozallowfullscreen="true" src="//speakerdeck.com/player/26bad8a4879b4be6a6b166d05a1f1c91" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p><a href="http://www.kayac.com/">カヤック</a>が運営しているスマートフォン向けSNS <a href="https://lobi.co/">Lobi</a> は、Amazon Web Services(AWS)上で<a href="https://hashicorp.com/">Hashicorp社</a>が開発しているオーケストレーションツール <a href="https://consul.io/">Consul</a> を活用し、EC2インスタンス100台規模のサーバと、AWSのマネージドサービスを利用して運用しています。</p>
                 
@@ -1263,20 +1316,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Consul%E3%81%A8%E8%87%AA%E4%BD%9COSS%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F100%E5%8F%B0%E8%A6%8F%E6%A8%A1%E3%81%AEWeb%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E9%81%8B%E7%94%A8+-+fujiwara&amp;dates=20150821T041000Z%2F20150821T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>Consulと自作OSSを活用した100台規模のWebサービス運用</a>
+                <a class='talk-title talk-open translatable header' data-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>Consulと自作OSSを活用した100台規模のWebサービス運用</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='b335dee0-09ad-11e5-8d7a-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1295745651/fujiwara-icon-s_bigger.png'>
@@ -1300,6 +1355,9 @@
                   <img alt='Casey West' class='ui image avatar' src='https://avatars.githubusercontent.com/u/54422?v=3'>
                   Casey West
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="401" id="talk_frame_309292" mozallowfullscreen="true" src="//speakerdeck.com/player/5313f1eadabd46a4a4596b6cbe8fb0de" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
+                </div>
                 <p>I have been working remotely for more than a decade. Half of that time has been in a technical leadership capacity. I often hear people say it's obviously harder to work remotely, and very hard to be in a leadership position remotely. My experience says otherwise, and I would like to share what I have learned to make remote work an effective strategy.</p>
                 
                 <p>This is about being a remote worker or working on a distributed team. I am convinced this is the path software organizations are rightly headed, and I am determined to help you get there. I will present the tools and vocabulary to give you the confidence to try it.</p>
@@ -1309,20 +1367,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Conway%27s+Law+of+Distributed+Work+-+Casey+West&amp;dates=20150821T052000Z%2F20150821T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en="Conway's Law of Distributed Work" data-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>Conway's Law of Distributed Work</a>
+                <a class='talk-title talk-open translatable header' data-en="Conway's Law of Distributed Work" data-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>Conway's Law of Distributed Work</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='a06d9970-0d7b-11e5-aaf9-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/54422?v=3'>
@@ -1340,6 +1400,9 @@
                 <div class='ui header'>
                   <img alt='cho45' class='ui image avatar' src='https://avatars.githubusercontent.com/u/3092?v=3'>
                   cho45
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="https://docs.google.com/presentation/d/1mLH9yS8ZChMKRGjBvy8xt3blSh_Ejjl8Ww-XfKzJUf8/embed" frameborder="0"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h3>WebAudio によるコネクティビティの向上</h3>
                 
@@ -1390,20 +1453,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=WebAudio+%E3%81%A7%E5%85%A5%E9%96%80%E3%81%99%E3%82%8B%E4%BF%A1%E5%8F%B7%E5%87%A6%E7%90%86+-+cho45&amp;dates=20150821T052000Z%2F20150821T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>WebAudio で入門する信号処理</a>
+                <a class='talk-title talk-open translatable header' data-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>WebAudio で入門する信号処理</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='c61a32a4-f797-11e4-bcef-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/3092?v=3'>
@@ -1421,6 +1486,9 @@
                 <div class='ui header'>
                   <img alt='Shinpei Maruyama' class='ui image avatar' src='https://avatars.githubusercontent.com/u/876988?v=3'>
                   Shinpei Maruyama
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309298" mozallowfullscreen="true" src="//speakerdeck.com/player/9167e98463394ceab7eac85ec4d60064" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h1>概要</h1>
                 
@@ -1462,20 +1530,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl%E3%81%A7%E5%AD%A6%E3%81%BC%E3%81%86%EF%BC%81%E6%96%87%E7%B3%BB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%80%81%E7%9F%A5%E8%AD%98%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E8%A8%88%E7%AE%97%E9%87%8F+-+Shinpei+Maruyama&amp;dates=20150821T052000Z%2F20150821T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>Perlで学ぼう！文系プログラマのための、知識ゼロからのデータ構造と計算量</a>
+                <a class='talk-title talk-open translatable header' data-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>Perlで学ぼう！文系プログラマのための、知識ゼロからのデータ構造と計算量</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='9f7059dc-003c-11e5-a00c-89c77d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/876988?v=3'>
@@ -1524,20 +1594,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%80%90sponsored+contents%E3%80%91%E8%8B%A5%E6%89%8B%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E9%81%94%E3%81%AE%E7%94%9F%E5%AD%98%E6%88%A6%E7%95%A5+-+%EF%BD%BC%EF%BE%9E%EF%BE%9D%EF%BD%BC%EF%BE%9E%EF%BE%86%EF%BD%B1&amp;dates=20150821T052000Z%2F20150821T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>【sponsored contents】若手エンジニア達の生存戦略</a>
+                <a class='talk-title talk-open translatable header' data-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>【sponsored contents】若手エンジニア達の生存戦略</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e14c5ae0-12f7-11e5-a909-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599568269507342336/jb_Rk7sX_bigger.jpg'>
@@ -1643,20 +1711,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl%E3%81%AE%E4%B8%8A%E3%81%AB%E3%82%82%E4%B8%89%E5%B9%B4+%E3%80%9C+%E3%81%9A%E3%81%A3%E3%81%A8%E3%82%A4%E3%82%B1%E3%81%A6%E3%82%8B%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E4%BD%9C%E3%82%8A%E7%B6%9A%E3%81%91%E3%82%8B%E6%8A%80%E8%A1%93+%E3%80%9C+-+%E8%B6%A3%E5%91%B3%E3%81%AF%E3%83%9E%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%81%A7%E3%81%99&amp;dates=20150821T052000Z%2F20150821T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Three years on Perl ~ The technology to developing cool web service ~' data-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜</a>
+                <a class='talk-title talk-open translatable header' data-en='Three years on Perl ~ The technology to developing cool web service ~' data-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='de9e7a1e-136d-11e5-a9fc-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1753788808/sushi_r_bigger.gif'>
@@ -1708,20 +1774,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Electron%3A+Building+desktop+apps+with+web+technologies+-+Ben+Ogle&amp;dates=20150821T063000Z%2F20150821T070000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Electron: Building desktop apps with web technologies' data-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>Electron: Building desktop apps with web technologies</a>
+                <a class='talk-title talk-open translatable header' data-en='Electron: Building desktop apps with web technologies' data-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>Electron: Building desktop apps with web technologies</a>
                 <div class='talk-meta'>
                   English, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='7d66b640-0a6b-11e5-b1a0-67dc7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/69169?v=3'>
@@ -1737,6 +1801,9 @@
                 <div class='ui header'>
                   <img alt='Atsuo Fukaya' class='ui image avatar' src='https://avatars.githubusercontent.com/u/1041857?v=3'>
                   Atsuo Fukaya
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309305" mozallowfullscreen="true" src="//speakerdeck.com/player/4e5572293cef4fa8beabfaa16d70344b" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>「<a href="https://esa.io/">esa</a>」は <a href="https://team.esa.io/">esa LLC</a> が開発・運営しているチーム向けMarkdownドキュメント共有サービスです。2015年1月に正式リリースされてから約半年、βテスト期間も含めると1年ほどになります。</p>
                 
@@ -1812,20 +1879,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=+esa.io+-+%E8%B6%A3%E5%91%B3%E3%81%8B%E3%82%89%E8%82%B2%E3%81%A6%E3%81%9FWeb%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A7%E7%94%9F%E3%81%8D%E3%81%A6%E3%81%84%E3%81%8F+-+Atsuo+Fukaya&amp;dates=20150821T070000Z%2F20150821T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='c191c08a-0a98-11e5-be34-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'> esa.io - 趣味から育てたWebサービスで生きていく</a>
+                <a class='talk-title talk-open translatable header' data-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'> esa.io - 趣味から育てたWebサービスで生きていく</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='c191c08a-0a98-11e5-be34-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1041857?v=3'>
@@ -1843,6 +1912,9 @@
                 <div class='ui header'>
                   <img alt='moznion' class='ui image avatar' src='https://avatars.githubusercontent.com/u/1422834?v=3'>
                   moznion
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/uTTKLuAh75wpg3" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/moznion/yet-another-perl-cooking" title="Yet Another Perl Cooking" target="_blank"&gt;Yet Another Perl Cooking&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/moznion" target="_blank"&gt;moznion&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>Perl (あるいは他の言語) を用いて料理・調理を自動化するという話をします． <br />
                 料理は時間と手間がかかる営みですから，21世紀に生活する我々はこれを可能な限り自動化していく必要があります．</p>
@@ -1871,20 +1943,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Yet+Another+Perl+Cooking+-+moznion&amp;dates=20150821T063000Z%2F20150821T070000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Yet Another Perl Cooking' data-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>Yet Another Perl Cooking</a>
+                <a class='talk-title talk-open translatable header' data-en='Yet Another Perl Cooking' data-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>Yet Another Perl Cooking</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='bb82c8fc-12a3-11e5-962e-d9f87d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1422834?v=3'>
@@ -1940,20 +2014,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E5%A4%A7%E8%A6%8F%E6%A8%A1%E3%81%A7%E3%82%82%E5%B0%8F%E4%B8%AD%E8%A6%8F%E6%A8%A1%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A7%E3%82%82%E6%8D%97%E3%82%8B+microservices+%E3%81%AA+Web+%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%A4%E3%81%8F%E3%82%8A%E3%81%8B%E3%81%9F+-+Kazuhiro+Osawa&amp;dates=20150821T070000Z%2F20150821T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='How to develop microservices with Perl' data-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>大規模でも小中規模サービスでも捗る microservices な Web サービスのつくりかた</a>
+                <a class='talk-title talk-open translatable header' data-en='How to develop microservices with Perl' data-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>大規模でも小中規模サービスでも捗る microservices な Web サービスのつくりかた</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='b396e912-091a-11e5-8d2d-67dc7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/9958?v=3'>
@@ -2003,7 +2075,9 @@
                 <ul>
                 <li>PietでWebアプリケーションが書けるようになります。</li>
                 <li>Factorなど他のスタック指向プログラミング言語を学ぶ際のステップになります。</li>
-                <li>LISP処理系を書いてみようというモチベーションが生まれます。</li>
+                <li><p>LISP処理系を書いてみようというモチベーションが生まれます。</p>
+                
+                <p><a href="//www.slideshare.net/HideakiNagamine/pietlisp-51936482">PietでLISP処理系を書くのは難しい</a>  from <a href="//www.slideshare.net/HideakiNagamine">Hideaki Nagamine</a> </p></li>
                 </ul>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Tutorial</div>
@@ -2011,20 +2085,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Piet%E3%81%A7LISP%E5%87%A6%E7%90%86%E7%B3%BB%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%AE%E3%81%AF%E9%9B%A3%E3%81%97%E3%81%84+-+Hideaki+Nagamine&amp;dates=20150821T063000Z%2F20150821T070000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>PietでLISP処理系を書くのは難しい</a>
+                <a class='talk-title talk-open translatable header' data-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>PietでLISP処理系を書くのは難しい</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='1da55daa-0deb-11e5-944c-67dc7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/7394250?v=3'>
@@ -2041,6 +2113,9 @@
                   <img alt='Tokuhiro Matsuno' class='ui image avatar' src='https://avatars.githubusercontent.com/u/21084?v=3'>
                   Tokuhiro Matsuno
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/bvkklAVgJcMGSu" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/tokuhirom/perl6-meets-jvm" title="Perl6 meets JVM" target="_blank"&gt;Perl6 meets JVM&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/tokuhirom" target="_blank"&gt;Tokuhiro Matsuno&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
+                </div>
                 <p>Perl6 のリリースが近づいてくる中で、いい加減触ってみるか! という方も多いと思います。
                 一方で、Perl6 ってライブラリが全然ないし、なにもできること無いんじゃないの? という感想をお持ちの方もいらっしゃることでしょう。
                 そんなことはありません。</p>
@@ -2056,20 +2131,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl6+on+JVM%3A+It+works%3F%3F+-+Tokuhiro+Matsuno&amp;dates=20150821T070000Z%2F20150821T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='53944d48-09ba-11e5-998a-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Perl6 on JVM: It works??' data-id='53944d48-09ba-11e5-998a-67dc7d574c3a'>Perl6 on JVM: It works??</a>
+                <a class='talk-title talk-open translatable header' data-en='Perl6 on JVM: It works??' data-id='53944d48-09ba-11e5-998a-67dc7d574c3a'>Perl6 on JVM: It works??</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='53944d48-09ba-11e5-998a-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='53944d48-09ba-11e5-998a-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/21084?v=3'>
@@ -2087,6 +2164,9 @@
                 <div class='ui header'>
                   <img alt='karupanerura' class='ui image avatar' src='https://avatars.githubusercontent.com/u/374550?v=3'>
                   karupanerura
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/36VT08JuMsAuqJ" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/karupanerura/technology-for-reduce-of-mistakes" title="Technology for reduce of mistakes - うっかりをなくす技術" target="_blank"&gt;Technology for reduce of mistakes - うっかりをなくす技術&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/karupanerura" target="_blank"&gt;karupanerura &amp;lt;/xmp&amp;gt;&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <h2>人間は間違える生き物である</h2>
                 
@@ -2171,20 +2251,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%81%86%E3%81%A3%E3%81%8B%E3%82%8A%E3%82%92%E3%81%AA%E3%81%8F%E3%81%99%E6%8A%80%E8%A1%93+-+karupanerura&amp;dates=20150821T063000Z%2F20150821T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='523b9508-0d77-11e5-8174-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Technology for reduce a mistake.' data-id='523b9508-0d77-11e5-8174-67dc7d574c3a'>うっかりをなくす技術</a>
+                <a class='talk-title talk-open translatable header' data-en='Technology for reduce a mistake.' data-id='523b9508-0d77-11e5-8174-67dc7d574c3a'>うっかりをなくす技術</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='523b9508-0d77-11e5-8174-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='523b9508-0d77-11e5-8174-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/374550?v=3'>
@@ -2202,6 +2284,9 @@
                 <div class='ui header'>
                   <img alt='Yusuke Wada' class='ui image avatar' src='http://graph.facebook.com/631255029/picture?type=square&amp;width=240'>
                   Yusuke Wada
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/ESZ6n1ooHLI8rR" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/yusukebe/podcastwebcpan" title="Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN" target="_blank"&gt;Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/yusukebe" target="_blank"&gt;Yusuke Wada&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>2013年2月にスタートしたmiyagawaさんによる <strong>Podcast</strong> 「 <em>Rebuild</em> 」はWebエンジニアを中心に人気メディアとなりました。僕自身もRebuildに影響を受け「 <em>だんごゆっけの平和な話</em> 」「 <em>wada.fm</em> 」という2つのPodcastを開始し現在でも配信中です。こうしたPodcastを成り立たせるには</p>
                 
@@ -2265,20 +2350,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Podcast%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93%E3%80%81%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEWeb%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%80%81%E3%81%9D%E3%81%97%E3%81%A6CPAN+-+Yusuke+Wada&amp;dates=20150821T063000Z%2F20150821T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Podcasting,  Media for Web Engineer, and CPAN' data-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN</a>
+                <a class='talk-title talk-open translatable header' data-en='Podcasting,  Media for Web Engineer, and CPAN' data-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='cf39f7fc-ff44-11e4-9264-66c47d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/631255029/picture?type=square&amp;width=240'>
@@ -2309,20 +2396,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Lightning+Talks+Day+1+-+Daisuke+Maki&amp;dates=20150821T074000Z%2F20150821T084000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='22957e9c-1872-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Lightning Talks Day 1' data-id='22957e9c-1872-11e5-aca1-525412004261'>Lightning Talks Day 1</a>
+                <a class='talk-title talk-open translatable header' data-en='Lightning Talks Day 1' data-id='22957e9c-1872-11e5-aca1-525412004261'>Lightning Talks Day 1</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='22957e9c-1872-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='22957e9c-1872-11e5-aca1-525412004261'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
@@ -2381,20 +2466,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Polyglot%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEDocker+-+%E6%88%91%E3%80%85%E3%81%AF%E3%81%A9%E3%81%93%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%A6%E3%81%A9%E3%81%93%E3%81%B8%E5%90%91%E3%81%8B%E3%81%86%E3%81%AE%E3%81%8B+-+Nathan+LeClaire&amp;dates=20150822T010000Z%2F20150822T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='21cb8176-065b-11e5-9492-79c97d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en="Docker For Polyglots : Where We've Come From, and Where We Can Go" data-id='21cb8176-065b-11e5-9492-79c97d574c3a'>PolyglotのためのDocker - 我々はどこから来てどこへ向かうのか</a>
+                <a class='talk-title talk-open translatable header' data-en="Docker For Polyglots : Where We've Come From, and Where We Can Go" data-id='21cb8176-065b-11e5-9492-79c97d574c3a'>PolyglotのためのDocker - 我々はどこから来てどこへ向かうのか</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='21cb8176-065b-11e5-9492-79c97d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='21cb8176-065b-11e5-9492-79c97d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/626978806595633153/0XDpnot__bigger.png'>
@@ -2412,6 +2495,9 @@
                 <div class='ui header'>
                   <img alt='Yosuke FURUKAWA' class='ui image avatar' src='http://pbs.twimg.com/profile_images/206948941/wall-e_bigger.jpg'>
                   Yosuke FURUKAWA
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309377" mozallowfullscreen="true" src="//speakerdeck.com/player/3505d390fb8448baa0de732c31544228" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h1>概要</h1>
                 
@@ -2495,20 +2581,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%81%A9%E3%81%86%E3%81%97%E3%81%A6%E3%81%93%E3%81%86%E3%81%AA%E3%81%A3%E3%81%9F%EF%BC%9F+Node.js%E3%81%A8io.js%E3%81%AE%E5%88%86%E8%A3%82%E3%81%A8%E7%B5%B1%E5%90%88%E3%81%AE%E8%A1%8C%E6%96%B9%E3%80%82%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E3%81%A9%E3%81%86%E9%80%B2%E5%8C%96%E3%81%97%E3%81%A6%E3%81%84%E3%81%8F%E3%81%AE%E3%81%8B%EF%BC%9F+-+Yosuke+FURUKAWA&amp;dates=20150822T010000Z%2F20150822T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Node/io.js past, present, future.' data-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>どうしてこうなった？ Node.jsとio.jsの分裂と統合の行方。これからどう進化していくのか？</a>
+                <a class='talk-title talk-open translatable header' data-en='Node/io.js past, present, future.' data-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>どうしてこうなった？ Node.jsとio.jsの分裂と統合の行方。これからどう進化していくのか？</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='82e93a96-f60e-11e4-907e-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/206948941/wall-e_bigger.jpg'>
@@ -2574,20 +2662,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Mackerel%E9%96%8B%E7%99%BA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8BScala%E3%81%A8Go%E3%80%81%E3%81%9D%E3%81%97%E3%81%A6Perl+-+songmu&amp;dates=20150822T010000Z%2F20150822T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>Mackerel開発におけるScalaとGo、そしてPerl</a>
+                <a class='talk-title talk-open translatable header' data-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>Mackerel開発におけるScalaとGo、そしてPerl</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='5b1cd536-07ed-11e5-9e42-79c97d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/538947384420483072/5WmJP-fh_bigger.jpeg'>
@@ -2606,6 +2692,9 @@
                   <img alt='Kazunori Sato' class='ui image avatar' src='https://avatars.githubusercontent.com/u/1623040?v=3'>
                   Kazunori Sato
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="401" id="talk_frame_309375" mozallowfullscreen="true" src="//speakerdeck.com/player/0c730435d0214607ac2ca677220e46cd" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
+                </div>
                 <p>Google Cloud Platform (GCP)の最大の特徴は、ハードウェアやLSIのレベルから自社で設計・開発されたGoogleの謎のインフラテクノロジーから得られる圧倒的なパワーを社外のお客さまに提供している点です。例えばMapReduceに代わる新しい世代の大規模分散処理基盤であるCloud Dataflowでは、社内の広告インフラ用に開発された巨大ストリーム処理フレームワークの技術とエンジニアを投入し、Exactly Onceレベルの到達保証とリアルタイムオンメモリ処理を実現しています。さらに今年後半は、Googleの謎技術から生まれた謎サービスが続々とGCPに登場予定。YAPC Asiaの開催時点でお話できるぎりぎりの線を攻めたいと思います。</p>
                 <div class='ui tag label'>Japanese</div>
                 <div class='ui tag label'>Infra</div>
@@ -2613,20 +2702,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Google+Cloud+Platform%E3%81%AE%E8%AC%8E%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%E3%82%92%E6%8E%98%E3%82%8A%E4%B8%8B%E3%81%92%E3%82%8B+-+Kazunori+Sato&amp;dates=20150822T010000Z%2F20150822T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Deep Dive into the "Out of place Artifacts" of Google Cloud Platform' data-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>Google Cloud Platformの謎テクノロジーを掘り下げる</a>
+                <a class='talk-title talk-open translatable header' data-en='Deep Dive into the "Out of place Artifacts" of Google Cloud Platform' data-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>Google Cloud Platformの謎テクノロジーを掘り下げる</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='c5ea5428-fac9-11e4-88c1-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1623040?v=3'>
@@ -2644,6 +2735,9 @@
                 <div class='ui header'>
                   <img alt='Masahiro Nagano' class='ui image avatar' src='https://avatars.githubusercontent.com/u/46764?v=3'>
                   Masahiro Nagano
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/a9AbEpcmNp1vxX" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/kazeburo/isucon-yapcasia-tokyo-2015" title="ISUCONの勝ち方 YAPC::Asia Tokyo 2015" target="_blank"&gt;ISUCONの勝ち方 YAPC::Asia Tokyo 2015&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/kazeburo" target="_blank"&gt;Masahiro Nagano&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>ISUCONというWebアプリケーションのパフォーマンス改善コンテストをご存知でしょうか？</p>
                 
@@ -2674,20 +2768,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=ISUCON%E3%81%AE%E5%8B%9D%E3%81%A1%E6%96%B9+-+Masahiro+Nagano&amp;dates=20150822T010000Z%2F20150822T020000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>ISUCONの勝ち方</a>
+                <a class='talk-title talk-open translatable header' data-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>ISUCONの勝ち方</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='86ebd212-fab3-11e4-8f5a-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/46764?v=3'>
@@ -2719,20 +2815,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl+5.22+and+You+-+Ricardo+Signes&amp;dates=20150822T021000Z%2F20150822T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Perl 5.22 and You' data-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>Perl 5.22 and You</a>
+                <a class='talk-title talk-open translatable header' data-en='Perl 5.22 and You' data-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>Perl 5.22 and You</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='3fe49c10-fa67-11e4-9e02-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/30682?v=3'>
@@ -2780,20 +2874,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=NASA%E4%B8%BB%E5%82%AC%E3%81%AE%E4%B8%96%E7%95%8C%E6%9C%80%E5%A4%A7%E7%B4%9A%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3SpaceApps%E3%82%92%E9%81%8B%E5%96%B6%E3%81%97%E3%81%9F%E8%A9%B1+-+%E6%B9%AF%E6%9D%91+%E7%BF%BC+Tsubasa+YUMURA&amp;dates=20150822T021000Z%2F20150822T024000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='We organized world&#x0027;s largest hackathon "SpaceApps"' data-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>NASA主催の世界最大級ハッカソンSpaceAppsを運営した話</a>
+                <a class='talk-title talk-open translatable header' data-en='We organized world&#x0027;s largest hackathon "SpaceApps"' data-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>NASA主催の世界最大級ハッカソンSpaceAppsを運営した話</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='93eaf068-faec-11e4-a8fd-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/599153322939916288/tRI3N4Eh_bigger.jpg'>
@@ -2809,6 +2901,9 @@
                 <div class='ui header'>
                   <img alt='アルパカ大明神[▮▮▮▯▯▯▯▯▯▯]' class='ui image avatar' src='http://pbs.twimg.com/profile_images/378800000078453409/b6bfcd56abe9253d9e41f2e14bdd038f_bigger.jpeg'>
                   アルパカ大明神[▮▮▮▯▯▯▯▯▯▯]
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309412" mozallowfullscreen="true" src="//speakerdeck.com/player/e7c1e339dd8947a5a5b2f10744858954" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>Dockerがリリースされてからだいぶ時が経ち、 <br />
                 Dockerコンテナを管理するツールもサードパーティ含め星の数ほどリリースされてきました。    </p>
@@ -2843,20 +2938,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Docker%EF%BC%93%E5%85%84%E5%BC%9F%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6+-+%E3%82%A2%E3%83%AB%E3%83%91%E3%82%AB%E5%A4%A7%E6%98%8E%E7%A5%9E%5B%E2%96%AE%E2%96%AE%E2%96%AE%E2%96%AF%E2%96%AF%E2%96%AF%E2%96%AF%E2%96%AF%E2%96%AF%E2%96%AF%5D&amp;dates=20150822T024000Z%2F20150822T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>Docker３兄弟について</a>
+                <a class='talk-title talk-open translatable header' data-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>Docker３兄弟について</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='5ea2630a-133d-11e5-8cbb-d9f87d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000078453409/b6bfcd56abe9253d9e41f2e14bdd038f_bigger.jpeg'>
@@ -2911,20 +3008,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%89%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%28%E7%89%B9%E3%81%ABPerl%29%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AEiOS%E3%82%A2%E3%83%97%E3%83%AA%E9%96%8B%E7%99%BA%E5%85%A5%E9%96%80+-+Daisuke+Murase&amp;dates=20150822T021000Z%2F20150822T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='iOS application development introduction for Perl server-side engineer' data-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>サーバーサイドエンジニア(特にPerl)のためのiOSアプリ開発入門</a>
+                <a class='talk-title talk-open translatable header' data-en='iOS application development introduction for Perl server-side engineer' data-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>サーバーサイドエンジニア(特にPerl)のためのiOSアプリ開発入門</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='c2c7b8a4-faaa-11e4-a8be-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/3420?v=3'>
@@ -2942,6 +3037,9 @@
                 <div class='ui header'>
                   <img alt='Kenji Naito' class='ui image avatar' src='https://avatars.githubusercontent.com/u/1315074?v=3'>
                   Kenji Naito
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309343" mozallowfullscreen="true" src="//speakerdeck.com/player/cde37ad797ab49dd92584770e9798d9a" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h2>概要</h2>
                 
@@ -3016,20 +3114,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E6%88%91%E3%80%85%E3%81%AF%E3%81%A9%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E5%86%97%E9%95%B7%E5%8C%96%E3%82%92%E5%A4%B1%E6%95%97%E3%81%97%E3%81%9F%E3%81%AE%E3%81%8B+-+Kenji+Naito&amp;dates=20150822T021000Z%2F20150822T024000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Not enough availability' data-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>我々はどのように冗長化を失敗したのか</a>
+                <a class='talk-title talk-open translatable header' data-en='Not enough availability' data-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>我々はどのように冗長化を失敗したのか</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='f2816038-10ec-11e5-89bf-d7f07d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/1315074?v=3'>
@@ -3045,6 +3145,9 @@
                 <div class='ui header'>
                   <img alt='さいけん' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1205361823/img_791544_45327987_0_bigger.jpg'>
                   さいけん
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/hKhjs7AapMcvTd" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/saiken3110/my-sql2" title="My sqlで2億件のシリアルデータと格闘した話" target="_blank"&gt;My sqlで2億件のシリアルデータと格闘した話&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/saiken3110" target="_blank"&gt;saiken3110&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>昨今、ビッグデータとまではいかないまでも、
                 大規模データを扱うシステムが増えているように思えます。</p>
@@ -3091,20 +3194,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=MySQL%E3%81%A72%E5%84%84%E4%BB%B6%E3%81%AE%E3%82%B7%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E6%A0%BC%E9%97%98%E3%81%97%E3%81%9F%E3%83%81%E3%83%A5%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%AE%E8%A9%B1+-+%E3%81%95%E3%81%84%E3%81%91%E3%82%93&amp;dates=20150822T024000Z%2F20150822T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>MySQLで2億件のシリアルデータと格闘したチューニングの話</a>
+                <a class='talk-title talk-open translatable header' data-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>MySQLで2億件のシリアルデータと格闘したチューニングの話</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='0af26fe4-0b7b-11e5-a29c-67dc7d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1205361823/img_791544_45327987_0_bigger.jpg'>
@@ -3116,12 +3221,15 @@
         </div>
         <div class='column slot60 three wide'>
           <div class='ui modal' id='modal-39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>
-            <div class='header translatable' data-en='Discover the Microsoft Azure!'>実はホットでオープンな Microsoft Azure</div>
+            <div class='header translatable' data-en='Discover the Microsoft Azure'>Discover the Microsoft Azure</div>
             <div class='content'>
               <div class='description'>
                 <div class='ui header'>
                   <img alt='Tatsuro Hisamori' class='ui image avatar' src='http://graph.facebook.com/100000459480102/picture?type=square&amp;width=240'>
                   Tatsuro Hisamori
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="https://docs.com/hisamori-tatsur/7486/discover-the-microsoft-azure" width="600" height="480" frameborder="0"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h3>トーク概要</h3>
                 
@@ -3145,7 +3253,6 @@
                 <ul>
                 <li>リアルタイムストリーム処理基盤 "Event Hubs/Stream Analytics"</li>
                 <li>リアルタイムダッシュボード "PowerBI Dashboard"</li>
-                <li>機械学習 as a Service "Azure Machine Learning"</li>
                 </ul></li>
                 <li>Azureの "as a Service" を支える技術
                 <ul>
@@ -3167,20 +3274,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E5%AE%9F%E3%81%AF%E3%83%9B%E3%83%83%E3%83%88%E3%81%A7%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%81%AA+Microsoft+Azure+-+Tatsuro+Hisamori&amp;dates=20150822T021000Z%2F20150822T031000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Discover the Microsoft Azure!' data-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>実はホットでオープンな Microsoft Azure</a>
+                <a class='talk-title talk-open translatable header' data-en='Discover the Microsoft Azure' data-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>Discover the Microsoft Azure</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='39a15ad4-0ff5-11e5-a984-d7f07d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/100000459480102/picture?type=square&amp;width=240'>
@@ -3237,20 +3346,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%83%A9%E3%83%B3%E3%83%81%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3A+-+Daisuke+Maki&amp;dates=20150822T032000Z%2F20150822T035000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e46f9d1b-2ad1-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='e46f9d1b-2ad1-11e5-aca1-525412004261'>ランチセッションA</a>
+                <a class='talk-title talk-open translatable header' data-id='e46f9d1b-2ad1-11e5-aca1-525412004261'>ランチセッションA</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e46f9d1b-2ad1-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e46f9d1b-2ad1-11e5-aca1-525412004261'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
@@ -3268,6 +3375,9 @@
                 <div class='ui header'>
                   <img alt='Daisuke Maki' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
                   Daisuke Maki
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309411" mozallowfullscreen="true" src="//speakerdeck.com/player/b893c227d2a549b8888bca5fac1289d6" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>スケジュール：</p>
                 
@@ -3295,20 +3405,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%83%A9%E3%83%B3%E3%83%81%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3B+-+Daisuke+Maki&amp;dates=20150822T032000Z%2F20150822T035000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e34fca9d-2ad1-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='e34fca9d-2ad1-11e5-aca1-525412004261'>ランチセッションB</a>
+                <a class='talk-title talk-open translatable header' data-id='e34fca9d-2ad1-11e5-aca1-525412004261'>ランチセッションB</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e34fca9d-2ad1-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e34fca9d-2ad1-11e5-aca1-525412004261'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
@@ -3339,20 +3451,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Adventures+in+Refactoring+-+Ben+Lavender&amp;dates=20150822T041000Z%2F20150822T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Adventures in Refactoring' data-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>Adventures in Refactoring</a>
+                <a class='talk-title talk-open translatable header' data-en='Adventures in Refactoring' data-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>Adventures in Refactoring</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='bd04b86c-f9de-11e4-b996-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12676?v=3'>
@@ -3370,6 +3480,9 @@
                 <div class='ui header'>
                   <img alt='Tatsuhiko Kubo' class='ui image avatar' src='https://avatars.githubusercontent.com/u/56752?v=3'>
                   Tatsuhiko Kubo
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309407" mozallowfullscreen="true" src="//speakerdeck.com/player/d79cf5d9df3643dcb1b3ea39ff99f759" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>nginxは近年急速にユーザ数を伸ばしているOSSのHTTPサーバです。<a href="http://news.netcraft.com/archives/2015/03/19/march-2015-web-server-survey.html">2015年3月のNetCraftの調査結果</a>によると現在nginxのシェアは全世界のWebサイトの十数パーセントを占めるまでになっています。</p>
                 
@@ -3394,20 +3507,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E5%AE%9F%E8%B7%B5nginx%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E9%96%8B%E7%99%BA%E3%80%9CC%E3%81%A8Lua%E3%80%9C+-+Tatsuhiko+Kubo&amp;dates=20150822T041000Z%2F20150822T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Practical nginx module development〜C and Lua〜' data-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>実践nginxモジュール開発〜CとLua〜</a>
+                <a class='talk-title talk-open translatable header' data-en='Practical nginx module development〜C and Lua〜' data-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>実践nginxモジュール開発〜CとLua〜</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='a4318242-f5f2-11e4-afb7-49b37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/56752?v=3'>
@@ -3432,10 +3547,25 @@
                 <li>This talk will be provided by Marty Pauley (@maokt) and Miki Horiuchi (@nukamu). </li>
                 </ul>
                 
-                <p>Unixの基本理念からLinuxの現代の機能までを踏まえ、最近話題のコンテナ技術がどう実現されているのか、また独自のコンテナをスクラッチからどのようにPerlでビルドできるのか、分析/解説します。Dockerの登場により注目を浴びつつあるLXCの技術的詳細を知りたいという方におすすめです。</p>
+                <p>Contents</p>
                 
                 <ul>
-                <li>このトークはポーリーマーティ(@maokt)と堀内美希(@nukamu)の2名により行われます</li>
+                <li>Linux / Unix fundamentals</li>
+                <li>What is a container?</li>
+                <li>Mount namespace</li>
+                <li>User namespace</li>
+                </ul>
+                
+                <p>Unixの基本理念からLinuxの現代の機能までを踏まえ、最近話題のコンテナ技術がどう実現されているのか、また独自のコンテナをスクラッチからどのようにPerlでビルドできるのか、分析/解説します。Dockerの登場により注目を浴びつつあるLXCの技術的詳細を知りたいという方におすすめです。</p>
+                
+                <p>トーク内容</p>
+                
+                <ul>
+                <li>Linux / Unix 前提知識</li>
+                <li>コンテナとは何か</li>
+                <li>マウント名前空間</li>
+                <li><p>ユーザ名前空間</p></li>
+                <li><p>このトークはポーリーマーティ(@maokt)と堀内美希(@nukamu)の2名により行われます</p></li>
                 <li>スライドは日本語も交える予定です</li>
                 </ul>
                 <div class='ui tag label'>English</div>
@@ -3444,20 +3574,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl%E3%81%A7%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E4%BD%9C%E3%82%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A+-+Miki+Horiuchi+Kabe&amp;dates=20150822T041000Z%2F20150822T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Build your own container from scratch with Perl' data-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>Perlでゼロから作るコンテナ</a>
+                <a class='talk-title talk-open translatable header' data-en='Build your own container from scratch with Perl' data-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>Perlでゼロから作るコンテナ</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='268d730e-136c-11e5-ac8f-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/951266011604370/picture?type=square&amp;width=240'>
@@ -3475,6 +3603,9 @@
                 <div class='ui header'>
                   <img alt='Masahiro Nakagawa' class='ui image avatar' src='https://avatars.githubusercontent.com/u/16928?v=3'>
                   Masahiro Nakagawa
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/FpWq4AfpocmGIy" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/repeatedly/technologies-for-data-analytics-platform" title="Technologies for Data Analytics Platform" target="_blank"&gt;Technologies for Data Analytics Platform&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/repeatedly" target="_blank"&gt;N Masahiro&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>データ分析の話はそこかしこで行われてますが，それを俯瞰する話はあまりないようなので，ここらで一つ色々とまとめて喋りたいと思います．また，Treasure Dataで得た経験をもとに，機能だけでなくデータ分析基盤でよく要求される要素についても，いくつかの視点を交えて言及したいと思います．
                 話したいトピックリスト．</p>
@@ -3504,20 +3635,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E5%9F%BA%E7%9B%A4%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93+-+Masahiro+Nakagawa&amp;dates=20150822T041000Z%2F20150822T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Technologies for Data Analytics Platform' data-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>データ分析基盤を支える技術</a>
+                <a class='talk-title talk-open translatable header' data-en='Technologies for Data Analytics Platform' data-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>データ分析基盤を支える技術</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='dd8ce20e-fad2-11e4-b6e7-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/16928?v=3'>
@@ -3558,20 +3691,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=3%E5%88%86%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AEOS%E3%82%92%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93+-+SHIBATA+Hiroshi&amp;dates=20150822T041000Z%2F20150822T051000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Advanced technic for OS upgrading in 3 minutes' data-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>3分でサービスのOSを入れ替える技術</a>
+                <a class='talk-title talk-open translatable header' data-en='Advanced technic for OS upgrading in 3 minutes' data-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>3分でサービスのOSを入れ替える技術</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='4f85e87a-f9ec-11e4-8262-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/12301?v=3'>
@@ -3605,20 +3736,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Parallelism%2C+Concurrency%2C+and+Asynchrony+in+Perl+6+-+Jonathan+Worthington&amp;dates=20150822T052000Z%2F20150822T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Parallelism, Concurrency, and Asynchrony in Perl 6' data-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>Parallelism, Concurrency, and Asynchrony in Perl 6</a>
+                <a class='talk-title talk-open translatable header' data-en='Parallelism, Concurrency, and Asynchrony in Perl 6' data-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>Parallelism, Concurrency, and Asynchrony in Perl 6</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='22f59fb8-0fad-11e5-98ef-43ec7d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/50259?v=3'>
@@ -3636,6 +3765,9 @@
                 <div class='ui header'>
                   <img alt='Masayuki Ishikawa' class='ui image avatar' src='http://graph.facebook.com/100001054610433/picture?type=square&amp;width=240'>
                   Masayuki Ishikawa
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/4G8IUqcIzqeHCE" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/mishikawa55/it-mishikawa-yapcasia" title="サンタクロースを支えるIT技術 @M_Ishikawa #yapcasia" target="_blank"&gt;サンタクロースを支えるIT技術 @M_Ishikawa #yapcasia&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/mishikawa55" target="_blank"&gt;Masayuki Ishikawa&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <h2>メリークリスマス！</h2>
                 
@@ -3674,20 +3806,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=+%E3%82%B5%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B9%E3%82%92%E6%94%AF%E3%81%88%E3%82%8BIT%E6%8A%80%E8%A1%93+-+Masayuki+Ishikawa&amp;dates=20150822T052000Z%2F20150822T055000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en=' Information technology to support the Santa Claus' data-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'> サンタクロースを支えるIT技術</a>
+                <a class='talk-title talk-open translatable header' data-en=' Information technology to support the Santa Claus' data-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'> サンタクロースを支えるIT技術</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='5ceebdcc-136c-11e5-a014-d9f87d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/100001054610433/picture?type=square&amp;width=240'>
@@ -3752,20 +3886,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl%E3%81%8C%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%98%E3%82%83%E3%81%AA%E3%81%84%E7%8F%BE%E5%A0%B4%E3%81%A7%E3%82%82Perl%E3%82%92%E4%BD%BF%E3%81%86%28AdTech%E7%8F%BE%E5%A0%B4%E7%B7%A8%EF%BC%89+-+Masaru+Hoshino&amp;dates=20150822T055000Z%2F20150822T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='897abeb2-1007-11e5-a760-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='897abeb2-1007-11e5-a760-d7f07d574c3a'>Perlがメインじゃない現場でもPerlを使う(AdTech現場編）</a>
+                <a class='talk-title talk-open translatable header' data-id='897abeb2-1007-11e5-a760-d7f07d574c3a'>Perlがメインじゃない現場でもPerlを使う(AdTech現場編）</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='897abeb2-1007-11e5-a760-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='897abeb2-1007-11e5-a760-d7f07d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/49303?v=3'>
@@ -3783,6 +3915,9 @@
                 <div class='ui header'>
                   <img alt='Marylou Lenhart' class='ui image avatar' src='https://avatars.githubusercontent.com/u/38176?v=3'>
                   Marylou Lenhart
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_308532" mozallowfullscreen="true" src="//speakerdeck.com/player/5248d18195884b3f9bf89e631302cbef" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <h3>Posture for Engineers</h3>
                 
@@ -3813,20 +3948,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Posture+for+Engineers+-+Marylou+Lenhart&amp;dates=20150822T052000Z%2F20150822T055000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Posture for Engineers' data-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>Posture for Engineers</a>
+                <a class='talk-title talk-open translatable header' data-en='Posture for Engineers' data-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>Posture for Engineers</a>
                 <div class='talk-meta'>
                   English, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='e466d60a-11db-11e5-b07b-d7f07d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/38176?v=3'>
@@ -3842,6 +3979,9 @@
                 <div class='ui header'>
                   <img alt='Etourneau Gwenn' class='ui image avatar' src='https://avatars.githubusercontent.com/u/4757816?v=3'>
                   Etourneau Gwenn
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/3ZMzAg2Pz68Pyq" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/gwennetourneau/lattice-yapcslideshare" title="Lattice yapc-slideshare" target="_blank"&gt;Lattice yapc-slideshare&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/gwennetourneau" target="_blank"&gt;Gwenn Etourneau&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <h2>Abstract</h2>
                 
@@ -3868,20 +4008,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Run+containerized+workloads+with+Lattice+-+Etourneau+Gwenn&amp;dates=20150822T055000Z%2F20150822T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='b03162be-0052-11e5-ba92-89c77d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Run containerized workloads with Lattice' data-id='b03162be-0052-11e5-ba92-89c77d574c3a'>Run containerized workloads with Lattice</a>
+                <a class='talk-title talk-open translatable header' data-en='Run containerized workloads with Lattice' data-id='b03162be-0052-11e5-ba92-89c77d574c3a'>Run containerized workloads with Lattice</a>
                 <div class='talk-meta'>
                   English, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='b03162be-0052-11e5-ba92-89c77d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='b03162be-0052-11e5-ba92-89c77d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/4757816?v=3'>
@@ -3948,20 +4090,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%80%90%E7%89%B9%E5%88%A5%E4%BC%81%E7%94%BB%E3%80%91YAPC%E3%81%82%E3%82%8B%E3%81%82%E3%82%8B%EF%BC%88%E4%BB%AE%EF%BC%89+-+%E9%8E%8C%E7%94%B0%E6%AD%A6%E4%BF%8A&amp;dates=20150822T052000Z%2F20150822T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='ad57ca84-13e9-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='ad57ca84-13e9-11e5-aca1-525412004261'>【特別企画】YAPCあるある（仮）</a>
+                <a class='talk-title talk-open translatable header' data-id='ad57ca84-13e9-11e5-aca1-525412004261'>【特別企画】YAPCあるある（仮）</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='ad57ca84-13e9-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='ad57ca84-13e9-11e5-aca1-525412004261'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/1261488582/picture?type=square&amp;width=240'>
@@ -3979,6 +4119,9 @@
                 <div class='ui header'>
                   <img alt='tkuchiki' class='ui image avatar' src='http://pbs.twimg.com/profile_images/378800000732873806/db63a0f75f9a217a875fa02d2ce34c04_bigger.png'>
                   tkuchiki
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe allowfullscreen="true" allowtransparency="true" frameborder="0" height="513" id="talk_frame_309389" mozallowfullscreen="true" src="//speakerdeck.com/player/d890ef1876c54ee1b0470c1293db1cd7" style="border:0; padding:0; margin:0; background:transparent;" webkitallowfullscreen="true" width="600"&gt;&lt;/iframe&gt;'></div>
                 </div>
                 <p>株式会社カヤックでは今年の 1 ~ 3 月にかけて、 <br />
                 運用しているソーシャルゲーム 3 タイトルをオンプレミス環境から AWS に移行しました。 <br />
@@ -4028,20 +4171,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%82%BD%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B+AWS+%E7%A7%BB%E8%A1%8C%E4%BA%8B%E4%BE%8B+-+tkuchiki&amp;dates=20150822T052000Z%2F20150822T062000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>ソーシャルゲームにおける AWS 移行事例</a>
+                <a class='talk-title talk-open translatable header' data-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>ソーシャルゲームにおける AWS 移行事例</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='32a684e8-fd21-11e4-94eb-bdc07d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/378800000732873806/db63a0f75f9a217a875fa02d2ce34c04_bigger.png'>
@@ -4066,6 +4211,9 @@
                   <img alt='Brad Fitzpatrick' class='ui image avatar' src='http://pbs.twimg.com/profile_images/1376628217/brad_bigger.jpg'>
                   Brad Fitzpatrick
                 </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe width="600" height="480" src="https://docs.google.com/presentation/d/1lL7Wlh9GBtTSieqHGJ5AUd1XVYR48UPhEloVem-79mA/mobilepresent?slide=id.gc5ec805d9_0_60" width="600" height="480" frameborder="0"&gt;&lt;/iframe&gt;'></div>
+                </div>
                 <p>Brad Fitzpatrick takes a slow, buggy Go program and shows how to use Go's wonderful tooling to make it fast and correct. Learn how to debug and profile Go programs. Topics will include Go's race detector, CPU, memory, and block profiling, minimizing garbage, various compiler flags, in-memory representation of core Go data structures, etc.</p>
                 <div class='ui tag label'>English</div>
                 <div class='ui tag label'>Tutorial</div>
@@ -4073,20 +4221,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Profiling+%26+Optimizing+in+Go+-+Brad+Fitzpatrick&amp;dates=20150822T063000Z%2F20150822T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='6bde6c69-187a-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Profiling &amp; Optimizing in Go' data-id='6bde6c69-187a-11e5-aca1-525412004261'>Profiling & Optimizing in Go</a>
+                <a class='talk-title talk-open translatable header' data-en='Profiling &amp; Optimizing in Go' data-id='6bde6c69-187a-11e5-aca1-525412004261'>Profiling & Optimizing in Go</a>
                 <div class='talk-meta'>
                   English, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='6bde6c69-187a-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='6bde6c69-187a-11e5-aca1-525412004261'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1376628217/brad_bigger.jpg'>
@@ -4133,20 +4283,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Perl+%E3%81%A7+RTB+%E3%81%AE%E6%9C%80%E5%89%8D%E7%B7%9A%E3%82%92%E9%97%98%E3%81%84%E6%8A%9C%E3%81%8F+-+Satoshi+Ohkubo&amp;dates=20150822T063000Z%2F20150822T070000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Fight the RTB market using Perl' data-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>Perl で RTB の最前線を闘い抜く</a>
+                <a class='talk-title talk-open translatable header' data-en='Fight the RTB market using Perl' data-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>Perl で RTB の最前線を闘い抜く</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='92a7bb60-1323-11e5-a252-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://graph.facebook.com/1121132103/picture?type=square&amp;width=240'>
@@ -4200,20 +4348,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9+-+CONBU&amp;dates=20150822T070000Z%2F20150822T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFB+%28701-702%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='81342dae-1351-11e5-ab94-d9f87d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='How to make the ConferenceNetwork' data-id='81342dae-1351-11e5-ab94-d9f87d574c3a'>カンファレンスネットワークの作り方</a>
+                <a class='talk-title talk-open translatable header' data-en='How to make the ConferenceNetwork' data-id='81342dae-1351-11e5-ab94-d9f87d574c3a'>カンファレンスネットワークの作り方</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='81342dae-1351-11e5-ab94-d9f87d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='81342dae-1351-11e5-ab94-d9f87d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/476568469920415744/wdOm99Aa_bigger.png'>
@@ -4259,20 +4405,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE+Windows%E5%85%A5%E9%96%80+-+tsubasa&amp;dates=20150822T063000Z%2F20150822T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFC+%28703%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='About Windows for OSS Enginner' data-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>オープンソースエンジニアのための Windows入門</a>
+                <a class='talk-title talk-open translatable header' data-en='About Windows for OSS Enginner' data-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>オープンソースエンジニアのための Windows入門</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='0b669ad8-f616-11e4-90fb-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/560137093/2286227_3079062002_bigger.jpg'>
@@ -4309,18 +4453,16 @@
                 <p>HTTP/2 を追い続けた 2 年半をふりかえり、HTTP2 とその関連仕様、
                 そしてそれを取り巻く議論をもとに、これからの Web について考えてみたいと思います。</p>
                 
-                <h2>Topics(仮)</h2>
+                <h2>Topics</h2>
                 
                 <ul>
-                <li>HTTP/1.1 -&gt; SPDY -&gt; HTTP/2</li>
-                <li>今のプロトコルへの需要</li>
-                <li>サーバ/クライアントサイド技術との連携</li>
+                <li>HTTP/1.1 から HTTP/2</li>
+                <li>プロトコルの現状</li>
+                <li>本当に移行する必要があるのか？</li>
                 <li>Server Push</li>
                 <li>TLS と HTTP/2</li>
-                <li>本当に移行する必要があるのか？</li>
+                <li>研究課題</li>
                 <li>そして QUIC へ</li>
-                <li>(WebSocket over HTTP/2)</li>
-                <li>(grpc)</li>
                 <li>etc</li>
                 </ul>
                 <div class='ui tag label'>Japanese</div>
@@ -4329,20 +4471,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=HTTP2+%E6%99%82%E4%BB%A3%E3%81%AE+Web+-+Jxck&amp;dates=20150822T063000Z%2F20150822T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFD+%28605-606%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='web over http2' data-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>HTTP2 時代の Web</a>
+                <a class='talk-title talk-open translatable header' data-en='web over http2' data-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>HTTP2 時代の Web</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='9e9ae188-fb20-11e4-9a97-8ab37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='https://avatars.githubusercontent.com/u/322289?v=3'>
@@ -4360,6 +4500,9 @@
                 <div class='ui header'>
                   <img alt='Yuichiro SAITO' class='ui image avatar' src='http://pbs.twimg.com/profile_images/3685820543/1e8215b4268fef1d97891e3d61b7b361_bigger.png'>
                   Yuichiro SAITO
+                </div>
+                <div class='presentation'>
+                  <div class='embed' data-html='&lt;iframe src="https://www.slideshare.net/slideshow/embed_code/key/3tWh7h4r1Xi9Ta" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen&gt; &lt;/iframe&gt; &lt;div style="margin-bottom:5px"&gt; &lt;strong&gt; &lt;a href="https://www.slideshare.net/koemu/simple-steps-and-tips-to-improve-it-infrastructure-operations" title="Simple steps and tips to improve IT infrastructure operations #yapcasia #yapcasiaE" target="_blank"&gt;Simple steps and tips to improve IT infrastructure operations #yapcasia #yapcasiaE&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href="http://www.slideshare.net/koemu" target="_blank"&gt;Yuichiro Saito&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&#x000A;'></div>
                 </div>
                 <p>(English follows Japanese)</p>
                 
@@ -4399,7 +4542,7 @@
                 
                 <p>This is the keyword we defined to IT infrastructure operations two years ago.</p>
                 
-                <p>I work for MSP company HEARTBEATS  (MSP: IT Infrastructure Management Service Provider Company).
+                <p>I work for MSP company HEARTBEATS  (MSP: IT Infrastructure Managed Service Provider Company).
                 At that time, IT infrastructure business was reached a turning point when IaaS(Infrastructure as a Service) was main currents of server system.
                 Then, we need to change our business strategy from the traditional approach.</p>
                 
@@ -4425,20 +4568,22 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E8%BE%9B%E3%81%84%E3%81%93%E3%81%A8%E3%82%92%E3%82%84%E3%82%81%E3%82%8B%EF%BC%81%E3%81%8B%E3%82%89%E5%A7%8B%E3%81%BE%E3%82%8B%E6%A5%AD%E5%8B%99%E6%94%B9%E5%96%84%E3%81%A8Infrastructure+as+Code+-+Yuichiro+SAITO&amp;dates=20150822T063000Z%2F20150822T073000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFE+%28607-608%29' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Simple steps and tips to improve IT infrastructure operations' data-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>辛いことをやめる！から始まる業務改善とInfrastructure as Code</a>
+                <a class='talk-title talk-open translatable header' data-en='Simple steps and tips to improve IT infrastructure operations' data-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>辛いことをやめる！から始まる業務改善とInfrastructure as Code</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='53aacc02-faca-11e4-8c2e-8ab37d574c3a'>
+                  <div class='ui label teal tiny'>
+                    <i class='icon desktop'></i>
+                    Slides
+                  </div>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/3685820543/1e8215b4268fef1d97891e3d61b7b361_bigger.png'>
@@ -4469,20 +4614,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Lightning+Talks+Day+2+-+Daisuke+Maki&amp;dates=20150822T074000Z%2F20150822T084000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='69caedbd-1872-11e5-aca1-525412004261'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Lightning Talks Day 2' data-id='69caedbd-1872-11e5-aca1-525412004261'>Lightning Talks Day 2</a>
+                <a class='talk-title talk-open translatable header' data-en='Lightning Talks Day 2' data-id='69caedbd-1872-11e5-aca1-525412004261'>Lightning Talks Day 2</a>
                 <div class='talk-meta'>
                   Japanese, 60 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='69caedbd-1872-11e5-aca1-525412004261'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='69caedbd-1872-11e5-aca1-525412004261'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
@@ -4513,20 +4656,18 @@
               </div>
             </div>
             <div class='actions'>
-              <a class='ui button blue' href='https://www.google.com/calendar/event?action=TEMPLATE&amp;text=%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0+%F0%9F%8E%89+-+Daisuke+Maki&amp;dates=20150822T085000Z%2F20150822T092000Z&amp;location=%E3%83%88%E3%83%A9%E3%83%83%E3%82%AFA+%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4' target='_blank'>
-                <i class='icon calendar'></i>
-                Google Calendar
-              </a>
               <div class='ui cancel button'>Close</div>
             </div>
           </div>
           <div class='ui vertical segment talk' id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>
             <div class='item'>
               <div class='content'>
-                <a class='talk-title translatable header' data-en='Closing 🎉' data-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>クロージング 🎉</a>
+                <a class='talk-title talk-open translatable header' data-en='Closing 🎉' data-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>クロージング 🎉</a>
                 <div class='talk-meta'>
                   Japanese, 30 min
                   <div class='ui star rating' data-max-rating='1' data-talk-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'></div>
+                </div>
+                <div class='talk-materials talk-open' data-id='6964fd88-f5e8-11e4-b323-49b37d574c3a'>
                 </div>
                 <div class='description speaker'>
                   <img class='ui avatar image' src='http://pbs.twimg.com/profile_images/1223562029/DSC00001_bigger.JPG'>
